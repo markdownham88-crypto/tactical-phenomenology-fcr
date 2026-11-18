@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Tactical Phenomenology of Fixed Charge Receivership</title>
+<meta name="description" content="Orientation, cognitive mapping and lived experience in the receiver's field, read through John Boyd. A field treatise by Mark Downham FRICS FNARA RPR.">
+<meta name="author" content="Mark Downham">
+<link rel="canonical" href="https://markdownham88-crypto.github.io/tactical-phenomenology-fcr/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Tactical Phenomenology of Fixed Charge Receivership">
+<meta property="og:description" content="Orientation, cognitive mapping and lived experience in the receiver's field, read through John Boyd.">
+<meta property="og:url" content="https://markdownham88-crypto.github.io/tactical-phenomenology-fcr/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0C1726">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+
+/* Layout idea: a single dark "City at dusk" world. A narrow reading column for argument,
+   widening to full grid for the working tools (ladder, check, navigator, option map). */
+:root{
+  --ink:#0C1726;       /* page */
+  --deep:#122238;      /* alternate band */
+  --panel:#182C46;     /* cards */
+  --line:#2A4262;      /* rules */
+  --bone:#EEE8DC;      /* headings, primary text */
+  --text:#C3CFDD;      /* body */
+  --muted:#8EA0B6;     /* captions */
+  --brass:#D2AE63;     /* accent */
+  --signal:#E8875A;    /* concern (orange) */
+  --clear:#7FB3E0;     /* clear (blue) */
+  --display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body:"IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  --mono:"IBM Plex Mono", "Courier New", monospace;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--brass);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);color:var(--bone);font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(34px,4.6vw,52px)}
+h3{font-size:26px}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.read{max-width:720px}
+section{padding:88px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--deep)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;display:block}
+.lede{font-size:20px;color:var(--bone);margin-top:18px;max-width:680px}
+.stack{display:flex;flex-direction:column;gap:18px}
+.num{font-variant-numeric:tabular-nums}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(12,23,38,.94);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--display);font-size:22px;color:var(--bone);text-decoration:none;font-style:italic;white-space:nowrap}
+.brand b{font-style:normal;font-weight:600;letter-spacing:.06em;font-size:15px;font-family:var(--body);color:var(--muted);margin-left:8px}
+.nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;white-space:nowrap}
+.nav a:hover{color:var(--bone)}
+@media (max-width:860px){.nav{display:none}}
+
+/* hero */
+.hero{padding:80px 0 72px;border-top:0;background:
+  radial-gradient(900px 420px at 85% 0%, rgba(210,174,99,.13), transparent 60%),
+  linear-gradient(180deg,#0F1D31 0%, var(--ink) 100%)}
+.hero h1{font-size:clamp(44px,7vw,88px);max-width:900px}
+.hero h1 em{color:var(--brass);font-style:italic}
+.hero .lede{font-size:21px}
+.who{display:flex;flex-wrap:wrap;gap:20px 40px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.who .name{font-family:var(--display);font-size:28px;color:var(--bone)}
+.who .post{color:var(--muted);font-size:15px;max-width:520px}
+.show{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:2px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--brass);color:var(--ink);background:var(--brass);cursor:pointer;font-family:var(--body)}
+.btn.ghost{background:transparent;color:var(--brass)}
+.stand{font-family:var(--mono);font-size:14px;color:var(--bone);border:1px dashed var(--line);padding:11px 16px}
+
+/* credentials */
+.creds{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;border:1px solid var(--line);margin-top:44px}
+.cred{padding:22px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:-1px -1px 0 0}
+.cred .big{font-family:var(--display);font-size:42px;color:var(--bone);line-height:1}
+.cred .small{font-size:14px;color:var(--muted);margin-top:8px}
+
+/* signals */
+.signals{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:40px}
+.sig{background:var(--panel);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:12px}
+.sig .fig{font-family:var(--display);font-size:46px;color:var(--brass);line-height:1}
+.sig .what{color:var(--bone);font-weight:500}
+.sig .tactic{font-size:15px;border-top:1px solid var(--line);padding-top:12px}
+.sig .tactic b{color:var(--brass);font-weight:600}
+.src{font-size:13px;color:var(--muted)}
+.src a{color:var(--muted)}
+
+/* quote */
+.pull{font-family:var(--display);font-size:clamp(28px,3.4vw,40px);color:var(--bone);line-height:1.25;border-left:3px solid var(--brass);padding:4px 0 4px 28px;margin:36px 0;font-style:italic;max-width:900px}
+.pull cite{display:block;font-style:normal;font-family:var(--body);font-size:15px;color:var(--muted);margin-top:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.contrast{background:var(--panel);border:1px solid var(--line);padding:26px}
+.contrast h3{font-size:24px;margin-bottom:10px}
+.contrast.us{border-color:var(--brass)}
+.contrast ul{margin:10px 0 0;padding-left:20px}
+.contrast li{margin:6px 0}
+
+/* tactics */
+.toggle{display:inline-flex;border:1px solid var(--line);margin-top:28px}
+.toggle button{background:transparent;border:0;color:var(--muted);padding:10px 16px;font:500 14px var(--body);cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--brass);color:var(--ink)}
+.tactics{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px}
+.tac{background:var(--panel);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:10px}
+.tac .n{font-family:var(--mono);color:var(--brass);font-size:13px}
+.tac .term{font-family:var(--display);font-size:28px;color:var(--bone);line-height:1.1}
+.tac .alt-term{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.tac .move{font-size:15px;border-top:1px solid var(--line);padding-top:10px}
+.tac .move b{color:var(--bone)}
+.src-mode .tac .term{display:none}
+body:not(.src-mode) .tac .alt-term{display:block}
+.src-mode .tac .alt-term{font-family:var(--display);font-size:28px;color:var(--bone);line-height:1.1}
+
+/* instruments */
+.instruments{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;margin-top:36px;border-top:1px solid var(--line)}
+.ins{padding:20px 18px 20px 0;border-bottom:1px solid var(--line)}
+.ins h3{font-size:23px;margin-bottom:6px}
+.ins p{font-size:15px}
+
+/* ladder */
+.ladder{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:32px;margin-top:40px;align-items:start}
+@media (max-width:860px){.ladder{grid-template-columns:1fr}}
+.rungs{display:flex;flex-direction:column-reverse;gap:10px;position:relative;padding-left:34px}
+.rungs::before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:linear-gradient(0deg,var(--clear),var(--signal))}
+.rung{position:relative;text-align:left;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:16px 18px;cursor:pointer;font-family:var(--body);font-size:15px}
+.rung::before{content:"";position:absolute;left:-30px;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--ink);border:2px solid var(--muted)}
+.rung .rn{font-family:var(--mono);font-size:12px;color:var(--muted);display:block}
+.rung .rt{font-family:var(--display);font-size:24px;color:var(--bone);display:block;line-height:1.15}
+.rung[aria-selected="true"]{border-color:var(--brass);background:#1E3555}
+.rung[aria-selected="true"]::before{background:var(--brass);border-color:var(--brass)}
+.rung-end{font-family:var(--mono);font-size:12px;color:var(--muted);padding-left:34px}
+.detail{background:var(--panel);border:1px solid var(--brass);padding:30px;min-height:100%}
+.detail h3{font-size:34px}
+.detail .q{font-family:var(--display);font-style:italic;font-size:24px;color:var(--brass);margin:10px 0 18px}
+.meters{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.meter .lab{font-size:13px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.bar{height:8px;background:var(--line);margin-top:8px}
+.bar i{display:block;height:100%;background:var(--brass);transition:width .35s}
+.detail ul{padding-left:20px;margin:8px 0 0}
+.detail li{margin:6px 0}
+
+/* option map */
+.mapbox{margin-top:36px;background:var(--panel);border:1px solid var(--line);padding:20px;overflow-x:auto}
+.mapbox svg{display:block;width:100%;min-width:640px;height:auto}
+.map-note{font-size:14px;color:var(--muted);margin-top:12px}
+
+/* check */
+.check{display:grid;grid-template-columns:1fr 340px;gap:32px;margin-top:40px;align-items:start}
+@media (max-width:920px){.check{grid-template-columns:1fr}}
+.qs{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.qrow{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+@media (max-width:620px){.qrow{grid-template-columns:36px 1fr}.qrow .seg{grid-column:1 / -1}}
+.qrow .qn{font-family:var(--display);font-size:34px;color:var(--brass);line-height:1}
+.qrow .qt{color:var(--bone);font-weight:500}
+.qrow .qh{font-size:14px;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line)}
+.seg button{background:transparent;border:0;border-right:1px solid var(--line);color:var(--muted);padding:8px 12px;font:500 13px var(--body);cursor:pointer;min-width:74px}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"][data-v="0"]{background:var(--clear);color:var(--ink)}
+.seg button[aria-pressed="true"][data-v="1"]{background:var(--bone);color:var(--ink)}
+.seg button[aria-pressed="true"][data-v="2"]{background:var(--signal);color:var(--ink)}
+.result{position:sticky;top:84px;background:var(--panel);border:1px solid var(--line);padding:26px}
+.result .score{font-family:var(--display);font-size:64px;color:var(--bone);line-height:1}
+.result .score small{font-size:24px;color:var(--muted)}
+.band{display:inline-block;margin:12px 0;padding:5px 10px;font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);color:var(--muted)}
+.band.b0{border-color:var(--clear);color:var(--clear)}
+.band.b1{border-color:var(--bone);color:var(--bone)}
+.band.b2{border-color:var(--signal);color:var(--signal)}
+.result p{font-size:15px}
+.result .answered{font-size:13px;color:var(--muted);margin-top:12px;font-family:var(--mono)}
+.linkbtn{background:none;border:0;color:var(--brass);font:500 14px var(--body);cursor:pointer;padding:0;margin-top:12px;text-decoration:underline;text-underline-offset:3px}
+
+/* navigator */
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.tab{background:transparent;border:1px solid var(--line);color:var(--muted);padding:12px 16px;font:500 15px var(--body);cursor:pointer;text-align:left}
+.tab[aria-selected="true"]{border-color:var(--brass);color:var(--bone);background:var(--panel)}
+.scen{margin-top:24px;display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}
+@media (max-width:920px){.scen{grid-template-columns:1fr}}
+.scen .brief{color:var(--bone);font-size:18px;margin-bottom:20px}
+.moves{list-style:none;margin:0;padding:0;counter-reset:m}
+.moves li{counter-increment:m;display:grid;grid-template-columns:48px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--line)}
+.moves li::before{content:counter(m,decimal-leading-zero);font-family:var(--mono);color:var(--brass);font-size:15px;padding-top:3px}
+.moves .mt{color:var(--bone);font-weight:600}
+.moves .md{font-size:15px}
+.tag{display:inline-block;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;margin-left:8px;border:1px solid;vertical-align:2px}
+.tag.rev{color:var(--clear);border-color:var(--clear)}
+.tag.part{color:var(--bone);border-color:var(--bone)}
+.tag.man{color:var(--signal);border-color:var(--signal)}
+.game{background:var(--panel);border:1px solid var(--line);padding:24px}
+.game h3{font-size:24px;margin-bottom:10px}
+.game dl{margin:0}
+.game dt{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:14px}
+.game dd{margin:4px 0 0;font-size:15px}
+
+/* engagement */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:36px}
+.step{border-top:3px solid var(--brass);background:var(--panel);padding:22px}
+.step .sn{font-family:var(--display);font-size:40px;color:var(--brass);line-height:1}
+.step h3{font-size:24px;margin:8px 0}
+.step p{font-size:15px}
+.deliver{margin-top:28px;columns:2 300px;column-gap:40px;padding-left:20px}
+.deliver li{margin:6px 0;break-inside:avoid}
+
+/* record */
+.assets{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.assets span{border:1px solid var(--line);padding:8px 13px;font-size:14px;color:var(--bone)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:36px}
+.quote{border-left:2px solid var(--brass);padding:4px 0 4px 18px}
+.quote p{font-family:var(--display);font-size:22px;color:var(--bone);font-style:italic;line-height:1.3}
+.quote span{display:block;font-size:13px;color:var(--muted);margin-top:10px}
+
+/* segments table */
+.tbl{overflow-x:auto;margin-top:32px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass);background:var(--panel)}
+td:first-child{color:var(--bone);font-weight:500}
+
+/* contact */
+.entry{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:36px}
+.ent{background:var(--panel);border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:10px}
+.ent h3{font-size:26px}
+.ent .when{font:500 13px var(--mono);color:var(--brass)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line);font-size:15px}
+.contact b{display:block;color:var(--bone);font-weight:600;margin-bottom:4px}
+.copy{background:transparent;border:1px solid var(--line);color:var(--muted);font:500 12px var(--mono);padding:4px 8px;cursor:pointer;margin-left:8px}
+
+footer{padding:56px 0 72px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer ol{padding-left:20px;margin:16px 0 0;columns:2 380px;column-gap:40px}
+footer li{margin:6px 0;break-inside:avoid}
+footer a{color:var(--muted)}
+.fine{margin-top:28px;font-size:13px}
+
+
+/* ===== Treatise additions: same world, longer reading ===== */
+.read p + p{margin-top:18px}
+.read h3{margin:40px 0 12px}
+.prose{max-width:760px}
+.prose p{margin-top:18px}
+.prose h3{margin:44px 0 6px}
+.prose em{color:var(--bone)}
+.caps{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+.vatic{font-family:var(--display);font-size:26px;line-height:1.3;color:var(--bone);font-style:italic;margin-top:26px}
+.shout{font-family:var(--mono);letter-spacing:.1em;color:var(--bone);font-size:14px}
+.subtitle{font-family:var(--display);font-style:italic;font-size:clamp(22px,2.6vw,30px);color:var(--muted);margin-top:14px;max-width:900px}
+.epi{margin-top:40px;max-width:760px;border-left:2px solid var(--brass);padding-left:22px}
+.epi p{font-family:var(--display);font-size:22px;font-style:italic;color:var(--bone);line-height:1.35}
+.epi span{display:block;font-size:13px;color:var(--muted);margin-top:8px;font-family:var(--body)}
+.epi + .epi{margin-top:22px}
+.note{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--signal);padding:20px 22px;font-size:15px;max-width:880px}
+.note b{color:var(--bone)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:32px}
+.colhead{font-family:var(--display);font-size:30px;color:var(--bone)}
+.kv{margin:0;padding:0;list-style:none}
+.kv li{padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+.kv li b{color:var(--bone);display:block;font-weight:600}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.toc a{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:14px 12px 14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--text);font-size:15px}
+.toc a span{font-family:var(--mono);color:var(--brass);font-size:13px;padding-top:2px}
+.toc a:hover{color:var(--bone)}
+
+/* reversible explainer cards */
+.revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:34px}
+.rev{position:relative;background:var(--panel);border:1px solid var(--line);padding:24px 24px 56px;cursor:pointer;text-align:left;color:var(--text);font:inherit;font-size:15px;line-height:1.6;transition:border-color .2s, background .2s}
+.rev:hover{border-color:var(--muted)}
+.rev .who2{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+.rev .t{font-family:var(--display);font-size:27px;color:var(--bone);line-height:1.12;margin:6px 0 10px;display:block}
+.rev .face{display:block}
+.rev .back{display:none}
+.rev.on{background:#1E3555;border-color:var(--brass)}
+.rev.on .front{display:none}
+.rev.on .back{display:block;animation:turn .35s ease}
+.rev .turn{position:absolute;left:24px;bottom:18px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em}
+.rev.on .turn{color:var(--brass)}
+.rev .back b{color:var(--bone)}
+@keyframes turn{from{opacity:0;transform:rotateY(-14deg)}to{opacity:1;transform:none}}
+
+/* OODA sketch */
+.oodabox{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:36px;align-items:start}
+@media (max-width:980px){.oodabox{grid-template-columns:1fr}}
+.oodasvg{background:var(--panel);border:1px solid var(--line);padding:14px;overflow-x:auto}
+.oodasvg svg{display:block;width:100%;min-width:660px;height:auto}
+.oodasvg .nd{cursor:pointer}
+.oodasvg .nd rect{fill:#13243B;stroke:#2A4262;stroke-width:1.5;transition:fill .2s,stroke .2s}
+.oodasvg .nd:hover rect{stroke:#8EA0B6}
+.oodasvg .nd.sel rect{fill:#1E3555;stroke:#D2AE63;stroke-width:2}
+.oodasvg .nd:focus{outline:none}
+.oodasvg .nd:focus-visible rect{stroke:#D2AE63;stroke-width:3}
+.oodasvg text{font-family:"IBM Plex Sans",Arial,sans-serif;fill:#C3CFDD;pointer-events:none}
+.oodasvg .big{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;fill:#EEE8DC;font-weight:600}
+.oodasvg .lnk{stroke:#8EA0B6;stroke-width:1.4;fill:none}
+.oodasvg .lnk.gc{stroke:#D2AE63;stroke-dasharray:5 4}
+.oodasvg .lnk.fb{stroke:#7FB3E0;stroke-dasharray:2 4}
+.panelx{background:var(--panel);border:1px solid var(--brass);padding:26px;position:sticky;top:84px}
+.panelx h3{font-size:30px}
+.panelx .q{font-family:var(--display);font-style:italic;font-size:21px;color:var(--brass);margin:8px 0 14px;line-height:1.3}
+.panelx dl{margin:0}
+.panelx dt{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:14px}
+.panelx dd{margin:4px 0 0;font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--muted);margin-top:12px;font-family:var(--mono)}
+.legend i{display:inline-block;width:26px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
+
+/* Lynch map */
+.lynch{display:grid;grid-template-columns:minmax(300px,520px) 1fr;gap:28px;margin-top:36px;align-items:start}
+@media (max-width:920px){.lynch{grid-template-columns:1fr}}
+.lynch svg{width:100%;height:auto;display:block;background:var(--panel);border:1px solid var(--line)}
+.lynch .el{cursor:pointer}
+.lynch .el:focus{outline:none}
+.lynch .el .hit{fill:transparent}
+.lynch .el.sel .hl{stroke:#D2AE63 !important}
+.lynch .el.sel text{fill:#D2AE63}
+.lbtns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+
+/* sliders & scorers */
+.scorer{display:grid;grid-template-columns:1fr 340px;gap:32px;margin-top:36px;align-items:start}
+@media (max-width:920px){.scorer{grid-template-columns:1fr}}
+.srow{display:grid;grid-template-columns:1fr 160px 34px;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.srow:first-child{border-top:1px solid var(--line)}
+@media (max-width:620px){.srow{grid-template-columns:1fr 34px}.srow input{grid-column:1 / -1}}
+.srow .st{color:var(--bone);font-weight:500;font-size:15px}
+.srow .sh{font-size:13.5px;color:var(--muted);margin-top:2px}
+.srow output{font-family:var(--display);font-size:28px;color:var(--brass);text-align:right}
+input[type=range]{accent-color:var(--brass);width:100%}
+
+/* stepper */
+.stepper{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border:1px solid var(--line)}
+.stepper button{flex:1 1 120px;background:transparent;border:0;border-right:1px solid var(--line);color:var(--muted);padding:14px 10px;font:500 14px var(--body);cursor:pointer;text-align:left}
+.stepper button:last-child{border-right:0}
+.stepper button .sn2{display:block;font-family:var(--display);font-size:30px;color:var(--muted);line-height:1}
+.stepper button[aria-selected="true"]{background:var(--panel);color:var(--bone);box-shadow:inset 0 -3px 0 var(--brass)}
+.stepper button[aria-selected="true"] .sn2{color:var(--brass)}
+.moment{margin-top:22px;display:grid;grid-template-columns:1.25fr 1fr;gap:26px}
+@media (max-width:920px){.moment{grid-template-columns:1fr}}
+.moment .lived{font-family:var(--display);font-size:24px;line-height:1.35;color:var(--bone);font-style:italic}
+.moment .body p{margin-top:14px}
+.steer{display:flex;gap:10px;margin-top:20px}
+
+/* radar */
+.radarbox{display:grid;grid-template-columns:1fr 420px;gap:32px;margin-top:36px;align-items:start}
+@media (max-width:960px){.radarbox{grid-template-columns:1fr}}
+.radarbox svg{width:100%;height:auto;display:block;background:var(--panel);border:1px solid var(--line)}
+.radarread{margin-top:16px;font-size:15px}
+
+/* cycle */
+.cycle{display:grid;grid-template-columns:300px 1fr;gap:30px;margin-top:34px;align-items:center}
+@media (max-width:860px){.cycle{grid-template-columns:1fr}}
+.cycle svg{width:100%;max-width:300px;height:auto;display:block;margin:0 auto}
+.cycle .ph{font-family:var(--display);font-size:34px;color:var(--bone)}
+.cycle .phk{font-family:var(--mono);font-size:13px;color:var(--brass);letter-spacing:.1em;text-transform:uppercase}
+
+/* theses */
+.theses{list-style:none;margin:36px 0 0;padding:0;counter-reset:th;columns:2 420px;column-gap:44px}
+.theses li{counter-increment:th;break-inside:avoid;padding:16px 0 16px 58px;border-top:1px solid var(--line);position:relative}
+.theses li::before{content:counter(th,upper-roman);position:absolute;left:0;top:14px;font-family:var(--display);font-size:24px;color:var(--brass);width:50px}
+.theses li b{color:var(--bone);font-family:var(--mono);font-size:13px;letter-spacing:.08em;display:block;margin-bottom:4px}
+
+.oodabox > *,.lynch > *,.scorer > *,.radarbox > *,.moment > *,.cycle > *,.scen > *,.check > *,.ladder > *{min-width:0}
+@media (max-width:620px){.brand b{display:none}.panelx{position:static}}
+.dl2{margin:0}
+.dl2 dt{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:14px}
+.dl2 dd{margin:4px 0 0;font-size:15px}
+
+/* print */
+@media print{
+  .top,.show,.steer,.stepper,.lbtns,.toggle{display:none!important}
+  body{background:#fff;color:#111}
+  section{padding:28px 0;border-color:#ccc;background:#fff!important}
+  h1,h2,h3,.rev .t,.vatic,.pull{color:#111}
+  .rev .back{display:block}.rev .front{display:block}
+}
+
+/* ===== v2: interactive diagram upgrades ===== */
+.dtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.dtools .lab2{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.chip{background:transparent;border:1px solid var(--line);color:var(--muted);padding:7px 12px;font:500 13px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--brass);color:var(--ink);background:var(--brass)}
+.chip.play{border-color:var(--brass);color:var(--brass)}
+@keyframes dash{to{stroke-dashoffset:-24}}
+.oodasvg .lnk{transition:opacity .25s}
+.oodasvg .lnk.flow{animation:dash 1.1s linear infinite}
+.oodasvg .lnk.dim,.oodasvg .nd.dim{opacity:.18}
+.oodasvg .nd{transition:opacity .25s}
+.oodasvg .nd.pulse rect{animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{stroke:#E8875A}}
+.dsvg{background:var(--panel);border:1px solid var(--line);display:block;width:100%;height:auto}
+.dsvg .hot{cursor:pointer}
+.dsvg .hot:focus{outline:none}
+.dsvg .hot:focus-visible circle,.dsvg .hot:focus-visible path{stroke:#D2AE63;stroke-width:3}
+.dgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;margin-top:30px;align-items:start}
+@media (max-width:920px){.dgrid{grid-template-columns:1fr}}
+.hint{font:500 12px var(--mono);color:var(--muted);letter-spacing:.06em;margin-top:10px}
+.deckbar{display:flex;gap:10px;align-items:center;margin-top:30px}
+.deckbar + .revs{margin-top:14px}
+.deckbar .count{font:500 12px var(--mono);color:var(--muted);letter-spacing:.06em}
+.rev .kicker{display:block;margin-top:10px;font-size:14px;color:var(--muted)}
+.rev.on .kicker{color:var(--bone)}
+.radarbox circle.drag{cursor:grab}
+.radarbox circle.drag:active{cursor:grabbing}
+.snow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.snowout{margin-top:16px;background:var(--panel);border:1px solid var(--line);padding:18px;font-size:15px;min-height:70px}
+.snowout b{color:var(--bone)}
+.netlegend{display:flex;flex-wrap:wrap;gap:14px;font:500 12px var(--mono);color:var(--muted);margin-top:10px}
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Principia Humanitatis <b>Field Treatises · Receivership</b></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#field">Field</a>
+      <a href="#boyd">Boyd</a>
+      <a href="#maps">Maps</a>
+      <a href="#lived">Lived</a>
+      <a href="#decide">Deciding</a>
+      <a href="#moments">Moments</a>
+      <a href="#conflict">Conflict</a>
+      <a href="#climate">Climate</a>
+      <a href="#check">Check</a>
+      <a href="#situations">Situations</a>
+      <a href="#renewal">Renewal</a>
+      <a href="#theses">Theses</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">A field treatise for fixed charge receivers, the lenders who appoint them, and their advisers</span>
+    <h1>A tactical <em>phenomenology</em> of fixed charge receivership</h1>
+    <p class="subtitle">Orientation, cognitive mapping and lived experience in the receiver’s field, read through John Boyd</p>
+    <p class="lede">A receiver is not appointed to a file. A receiver is appointed into a situation that is already moving: an asset with occupiers, a borrower with a story, a lender with a deadline and a market with its own tempo. This treatise describes that situation as it is lived from the inside. It uses John Boyd’s strategic theory, the science of cognitive maps and the phenomenology of skilled action to show how good receivers orient, decide and act, and how that capacity can be taught.</p>
+
+    <div class="who">
+      <div>
+        <div class="name">Mark Downham</div>
+        <div class="post">BA (Hons) MPhil MBA FRICS FNARA RPR · LPA and Fixed Charge Receiver since 1989 · more than 1,000 appointments · workout strategist, complexity thinker and game theory practitioner</div>
+      </div>
+      <div>
+        <div class="name">After John Boyd <span style="font-size:18px;color:var(--muted)">(1927–1997)</span></div>
+        <div class="post">Fighter pilot, strategist and author of <i>Destruction and Creation</i> (1976) and <i>A Discourse on Winning and Losing</i>, the source of the OODA “loop” sketch</div>
+      </div>
+    </div>
+
+    <div class="show">
+      <a class="btn" href="#boyd">Begin with Boyd’s sketch</a>
+      <a class="btn ghost" href="#check">Test your orientation on a live case</a>
+      <span class="stand">Companion to <a href="https://markdownham88-crypto.github.io/complexity-as-credit-tactics/">Complexity as Credit Tactics</a></span>
+    </div>
+
+    <div class="creds" aria-label="The apparatus at a glance">
+      <div class="cred"><div class="big num">1989</div><div class="small">The year the author took his first receivership appointment</div></div>
+      <div class="cred"><div class="big num">1,000+</div><div class="small">Appointments behind the patterns described here</div></div>
+      <div class="cred"><div class="big num">5</div><div class="small">Elements of Boyd’s orientation: culture, inheritance, experience, new information, analysis and synthesis</div></div>
+      <div class="cred"><div class="big num">3</div><div class="small">Planes of conflict a receiver works on at once: moral, mental, physical</div></div>
+      <div class="cred"><div class="big num">7</div><div class="small">Lived moments of an appointment, from instruction to release</div></div>
+    </div>
+
+    <div class="epi">
+      <p>“Everything in war is very simple, but the simplest thing is difficult.”</p>
+      <span>Carl von Clausewitz, <i>On War</i>, Book I (J. J. Graham translation)</span>
+    </div>
+    <div class="epi">
+      <p>“The real risk management and risk mitigation is the quality and effectiveness of the asset management thinking.”</p>
+      <span>Mark Downham, <i>Complexity as Credit Tactics</i></span>
+    </div>
+
+    <nav class="toc" aria-label="Contents">
+      <a href="#field"><span>01</span>The field: receivership is lived before it is administered</a>
+      <a href="#boyd"><span>02</span>Boyd, read past the four boxes</a>
+      <a href="#maps"><span>03</span>The map the receiver carries in</a>
+      <a href="#lived"><span>04</span>The body at the threshold</a>
+      <a href="#decide"><span>05</span>How receivers actually decide</a>
+      <a href="#moments"><span>06</span>Seven lived moments of an appointment</a>
+      <a href="#conflict"><span>07</span>Moral, mental, physical</a>
+      <a href="#climate"><span>08</span>The climate that makes tempo possible</a>
+      <a href="#check"><span>09</span>Twelve questions to test orientation</a>
+      <a href="#situations"><span>10</span>Three situations, read the Boyd way</a>
+      <a href="#renewal"><span>11</span>Destruction and creation of the practitioner</a>
+      <a href="#theses"><span>12</span>Twenty theses</a>
+    </nav>
+  </div>
+</section>
+
+<!-- 01 FIELD -->
+<section id="field" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">01 · The field</span>
+    <h2>Receivership is lived before it is administered</h2>
+    <p class="lede">The law describes the office. The textbooks describe the process. Neither describes what it is like to stand in the car park of a half-let industrial estate at eight in the morning with a deed of appointment in your pocket, three unknown vans in the yard and a borrower’s solicitor already on the phone. That experience is where receiverships are won and lost.</p>
+
+    <div class="prose">
+      <p>The statutory frame is clear enough. Section 101 of the Law of Property Act 1925 gives a mortgagee the power to appoint a receiver; section 109 sets out what that receiver may do and makes the receiver the agent of the mortgagor, not of the lender who chose them. Most modern charges extend those powers by contract, which is why practitioners speak of fixed charge receivers rather than bare LPA receivers. The case law then draws the duties around the office. <i>Medforth v Blake</i> [2000] Ch 86 requires good faith and, where the receiver manages the property, due diligence. <i>Silven Properties v Royal Bank of Scotland</i> [2003] EWCA Civ 1409 sets the standard on sale: reasonable care to obtain the true market value at the moment the receiver chooses to sell, with freedom over timing. <i>Downsview Nominees v First City Corporation</i> [1993] places all of this beneath a primary duty to bring about repayment.</p>
+      <p>Every one of those sentences is true, and none of them tells a receiver what to do next. The law sets the edges of the field. It does not describe the field. What happens inside those edges is a sequence of perceptions, judgments and moves made under time pressure, with incomplete information, among people whose interests diverge and sometimes collide. That is a <em>tactical</em> situation in the strict sense, and it has a texture that can be described. Describing it carefully is what phenomenology is for.</p>
+      <p>Phenomenology, in the tradition that runs from Husserl through Heidegger and Merleau-Ponty to Hubert Dreyfus, is the disciplined description of experience as it is actually lived, before we tidy it into theory. Applied here, it asks a plain question with large consequences: <em>what does the receiver actually perceive, attend to, feel and do, moment by moment, from instruction to release?</em> Answer that well, and you have the material for training, for case review, for choosing receivers and for designing a practice. Answer it badly, or not at all, and you are left with checklists that describe the “then” without the expertise to recognise the “if”.</p>
+    </div>
+
+    <div class="deckbar"><span class="caps">The legal frame, card by card</span><button class="chip" data-turnall="legal">Turn all</button><span class="count" data-count="legal"></span></div>
+    <div class="revs" data-deck="legal"></div>
+
+    <div class="signals">
+      <article class="sig">
+        <div class="fig num">59%</div>
+        <div class="what">of fixed charge receivership appointments in the first half of 2026 were residential, according to Nara data. Volumes were slightly below the same period of 2025 but still above 2024.</div>
+        <div class="tactic"><b>Tactic:</b> the commonest appointment is a home or a block of homes with people in it. Orientation starts with occupation, not with value.</div>
+        <div class="src">Vail Williams, Nara data, July 2026</div>
+      </article>
+      <article class="sig">
+        <div class="fig num">~3.5%</div>
+        <div class="what">of appointments come from clearing banks. The rest come from specialist, bridging, challenger and private lenders, each with its own culture, appetite and timetable.</div>
+        <div class="tactic"><b>Tactic:</b> read the appointing lender’s culture as part of the terrain. Boyd put cultural traditions inside orientation for a reason.</div>
+        <div class="src">Vail Williams, Nara data, July 2026</div>
+      </article>
+      <article class="sig">
+        <div class="fig">Before</div>
+        <div class="what">Lenders are commissioning strategic reviews and retaining experienced receivers in an advisory role before any formal appointment, especially on income-secure assets.</div>
+        <div class="tactic"><b>Tactic:</b> the receiver’s observation window now opens before the deed is signed. Use it to build the map.</div>
+        <div class="src">Vail Williams, Nara data, July 2026</div>
+      </article>
+      <article class="sig">
+        <div class="fig num">+74%</div>
+        <div class="what">rise in appointments in the first half of 2025 against the second half of 2024, with land and incomplete developments at 14% of the total.</div>
+        <div class="tactic"><b>Tactic:</b> when volume surges, tempo becomes a resource. Practices with good implicit guidance cope; practices that run on explicit sign-off queue.</div>
+        <div class="src">Vail Williams, Nara half-year data, 2025</div>
+      </article>
+      <article class="sig">
+        <div class="fig num">15→29%</div>
+        <div class="what">One national practice saw the commercial share of its receivership instructions nearly double in a year, with cases growing larger and more tangled.</div>
+        <div class="tactic"><b>Tactic:</b> complexity compounds. Map dependencies (shared contractors, occupiers, funders) before you act on any one asset.</div>
+        <div class="src">Allsop, <i>Property Week</i>, November 2025</div>
+      </article>
+      <article class="sig">
+        <div class="fig">Validity</div>
+        <div class="what">In <i>BLCP Eden 1 Ltd v Rooksmead Securities</i> [2026] EWHC 1268 (Ch) the court took a strict line on the validity of a receivers’ appointment.</div>
+        <div class="tactic"><b>Tactic:</b> the first object a receiver perceives is the paper. A defective deed is a broken weapon; check it before you enter the field.</div>
+        <div class="src">Irwin Mitchell commentary, 2026</div>
+      </article>
+    </div>
+
+    <div class="two">
+      <div class="contrast">
+        <h3>The file view</h3>
+        <ul>
+          <li>The appointment is an administrative event</li>
+          <li>The asset is a set of documents and a valuation</li>
+          <li>Decisions are choices among listed options</li>
+          <li>Expertise is knowing the rules and the case law</li>
+          <li>Speed means processing faster</li>
+          <li>Learning happens on courses</li>
+        </ul>
+      </div>
+      <div class="contrast us">
+        <h3>The field view</h3>
+        <ul>
+          <li>The appointment is entry into a moving situation</li>
+          <li>The asset is a place people use, contest and value differently</li>
+          <li>Decisions are recognitions, tested by mental simulation</li>
+          <li>Expertise is an orientation that sees what matters first</li>
+          <li>Tempo means changing the situation faster than it can surprise you</li>
+          <li>Learning happens through cases, reflected on and remapped</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 BOYD -->
+<section id="boyd">
+  <div class="wrap">
+    <span class="eyebrow">02 · The strategist</span>
+    <h2>Boyd, read past the four boxes</h2>
+    <p class="lede">Most people meet John Boyd as a four-step circle: observe, orient, decide, act. That version is almost useless to a receiver. Boyd’s own sketch is a web of feedback and feed-forward in which orientation sits at the centre and quietly governs everything else.</p>
+
+    <div class="prose">
+      <p>Boyd never wrote the book everyone wanted from him. His theory lives in an eight-page essay, <i>Destruction and Creation</i> (1976), and in a long sequence of briefings later gathered as <i>A Discourse on Winning and Losing</i>: <i>Patterns of Conflict</i>, <i>Organic Design for Command and Control</i>, <i>The Strategic Game of ? and ?</i>, <i>Revelation</i>, <i>The Conceptual Spiral</i> and, last, <i>The Essence of Winning and Losing</i> (1995–96), where the only drawing of the full OODA “loop” appears. Frans Osinga’s <i>Science, Strategy and War</i> remains the most thorough reconstruction; Robert Coram’s <i>Boyd</i> the best way in; Chet Richards’ <i>Certain to Win</i> the most applied. Tasshin Fogleman’s essay on Boyd’s strategic theory is a sound map of that literature and of its quarrels.</p>
+      <p>Three things in the full sketch matter for receivership. First, <em>orientation is not a step</em>. Every arrow in the drawing passes through it. It is shaped by cultural traditions, genetic heritage, previous experience, new information and the work of analysis and synthesis, all interacting. Second, there is a direct line from orientation to action that bypasses explicit decision: Boyd called it <em>implicit guidance and control</em>. When orientation matches the situation, the practitioner simply acts, and the action is right. Third, the whole loop is a running test. Decision is a hypothesis; action is the test; the result comes back as observation and reshapes orientation. Boyd describes the whole thing as an ongoing, many-sided implicit cross-referencing process.</p>
+      <p>Select any element of the sketch below to see what it means in Boyd’s terms and what it becomes inside an appointment.</p>
+    </div>
+
+    <div class="oodabox">
+      <div>
+        <div class="dtools" role="group" aria-label="Trace a route through the sketch">
+          <span class="lab2">Trace</span>
+          <button class="chip" data-mode="all" aria-pressed="true">All flows</button>
+          <button class="chip" data-mode="ff" aria-pressed="false">Explicit route</button>
+          <button class="chip" data-mode="gc" aria-pressed="false">Implicit guidance</button>
+          <button class="chip" data-mode="fb" aria-pressed="false">Feedback</button>
+          <button class="chip play" id="oodaPlay" aria-pressed="false">▶ Walk the loop</button>
+        </div>
+        <div class="oodasvg">
+          <svg id="ooda" viewBox="0 0 900 470" role="group" aria-label="Boyd’s OODA loop sketch, interactive"></svg>
+        </div>
+        <div class="legend">
+          <span><i style="border-color:#8EA0B6"></i>feed forward</span>
+          <span><i style="border-color:#D2AE63;border-top-style:dashed"></i>implicit guidance &amp; control</span>
+          <span><i style="border-color:#7FB3E0;border-top-style:dotted"></i>feedback</span>
+        </div>
+      </div>
+      <aside class="panelx" id="oodaPanel" aria-live="polite"></aside>
+    </div>
+
+    <h3 style="margin-top:72px">Destruction and creation: why every concept of the case decays</h3>
+    <div class="prose">
+      <p><i>Destruction and Creation</i> is the philosophical root of everything else, and it is directly about cognitive maps. Boyd argues that we survive by building mental concepts that match our environment, and that those concepts degrade the moment we use them. He draws on three ideas from outside strategy: Gödel (no closed logical system can verify itself completely), Heisenberg (observation is limited and disturbs what it observes) and the Second Law of Thermodynamics (a closed system runs down into disorder). Chet Richards, who worked with Boyd on the essay, insists these are not loose analogies but the grounds of a claim: <em>any concept sealed off from fresh contact with reality will drift into mismatch and confusion</em>.</p>
+      <p>Boyd’s answer is a dialectic engine. First comes <em>destructive deduction</em>: break the existing concept apart, free its pieces from the meanings that held them. Then comes <em>creative induction</em>: recombine those pieces, with others drawn from different domains, into a new concept that fits. His teaching example was the snowmobile, assembled in imagination from skis, an outboard motor, tank treads and bicycle handlebars. The cycle never ends: structure, unstructure, restructure, and again.</p>
+      <p>For a receiver this is not abstract. The concept of the case is formed early: “a vacant site awaiting sale”, “a co-operative borrower who has fallen behind”, “a straightforward rent collection”. Each is useful. Each begins to decay on the first site visit. The receiver who cannot take the concept apart when the evidence turns, who keeps treating the “vacant” site as vacant after the second set of vans appears, is operating inside a closed system. Entropy does the rest.</p>
+    </div>
+
+    <div class="deckbar"><span class="caps">Boyd’s apparatus, card by card</span><button class="chip" data-turnall="boyd">Turn all</button><span class="count" data-count="boyd"></span></div>
+    <div class="revs" data-deck="boyd"></div>
+
+    <h3 style="margin-top:56px">Patterns of conflict, translated</h3>
+    <p class="lede" style="font-size:18px">Boyd’s organisational climate is usually given in German. Switch the view to see each term as a receiver would use it.</p>
+    <div class="toggle" role="group" aria-label="Vocabulary">
+      <button id="vBoyd" aria-pressed="true">Boyd’s terms</button>
+      <button id="vRec" aria-pressed="false">Receiver’s terms</button>
+    </div>
+    <div class="tactics" id="climateCards">
+      <article class="tac"><span class="n">B1</span><span class="term">Einheit</span><span class="alt-term">Unity of the appointment team</span><p>Mutual trust, unity and cohesion. Boyd treated it as the moral precondition for everything fast.</p><p class="move"><b>In the field:</b> lender’s recovery manager, receiver, solicitor, agent and managing agent share one picture and trust each other to act on it without re-asking.</p></article>
+      <article class="tac"><span class="n">B2</span><span class="term">Fingerspitzengefühl</span><span class="alt-term">Fingertip feel for the asset</span><p>An intuitive feel for complex, potentially chaotic situations, associated with Rommel. Boyd saw the OODA sketch as a schematic for building it.</p><p class="move"><b>In the field:</b> the sense, before you can say why, that the occupier story is wrong, the buyer is not real, or the site will be re-entered tonight.</p></article>
+      <article class="tac"><span class="n">B3</span><span class="term">Auftragstaktik</span><span class="alt-term">The mission-led instruction</span><p>Mission command: a contract in which the superior says what and why, and the subordinate decides how.</p><p class="move"><b>In the field:</b> an instruction letter that states the lender’s recovery objective and limits, then leaves the receiver room to choose the route.</p></article>
+      <article class="tac"><span class="n">B4</span><span class="term">Schwerpunkt</span><span class="alt-term">The value-recovery focus</span><p>Any concept that gives an operation focus and direction, supported by secondary efforts (Nebenpunkte).</p><p class="move"><b>In the field:</b> one stated focus per case, such as “secure the income”, “get vacant possession lawfully” or “complete and sell”, that every action serves.</p></article>
+      <article class="tac"><span class="n">B5</span><span class="term">Behendigkeit</span><span class="alt-term">Agility between routes</span><p>Agility: the ability to shift quickly from one action to another as the situation changes.</p><p class="move"><b>In the field:</b> moving from collect-and-hold to sale, or from sale to completion, without losing a fortnight to re-authorisation.</p></article>
+      <article class="tac"><span class="n">B6</span><span class="term">Cheng / ch’i</span><span class="alt-term">The expected move and the decisive one</span><p>From Sun Tzu by way of <i>Patterns of Conflict</i>: the orthodox move fixes attention; the unorthodox move decides the matter.</p><p class="move"><b>In the field:</b> the statutory notices and rent demands everyone expects, paired with the lawful move nobody anticipated, such as early direct contact with the anchor occupier.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 MAPS -->
+<section id="maps" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">03 · Cognitive mapping</span>
+    <h2>The map the receiver carries in</h2>
+    <p class="lede">Orientation is, among other things, a map: an internal model of where things are, how they connect and what follows from what. Seventy-eight years of research on cognitive maps tells us how such maps are built, how they narrow under pressure and how they are redrawn when the world changes.</p>
+
+    <div class="prose">
+      <p>In 1948 Edward Tolman reported that rats in his Berkeley mazes were learning more than a chain of rewarded turns. They were building something like a map of the whole environment, which let them take shortcuts they had never been trained on. He closed the paper by turning to people, and drew a distinction every receiver will recognise: some conditions produce <em>narrow strip-maps</em>, a single remembered route from start to goal, while others produce <em>broad comprehensive maps</em> that show the wider terrain. Strong motivation and intense frustration, he argued, narrow the map.</p>
+      <p>That is the receiver’s first danger. An appointment arrives with pressure already attached: arrears, an anxious credit committee, a borrower threatening litigation, a date. Pressure produces the strip-map, the single route from appointment to sale, and the strip-map has no room for the side road where the value actually is.</p>
+      <p>Neuroscience has since given the cognitive map a physical address. John O’Keefe found “place cells” in the hippocampus in 1971, cells that fire when an animal is in a particular place; May-Britt and Edvard Moser found “grid cells” in the neighbouring entorhinal cortex in 2005, which lay a coordinate system over space. The three shared the 2014 Nobel Prize. Two findings from that work matter here. When an animal is moved to a new environment, its place cells <em>remap</em>: the old map is not edited, a new one is laid down. And the same machinery appears to organise abstract, conceptual spaces as well as physical ones. The receiver’s map of a case is not a metaphor laid over the brain’s map of space; it may be built with the same tools.</p>
+    </div>
+
+    <div class="revs" id="mapCards">
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">Tolman, 1948</span><span class="t">Strip-maps and comprehensive maps</span>Pressure narrows the map to one route. Turn the card for the receiver’s version.</span><span class="face back"><span class="who2">In the field</span><span class="t">Widen the map before you narrow the route</span>Before choosing a route, write down at least three ways the case could end and two parties who could change it. If you can only see one ending, you are on a strip-map. <b>Move:</b> make the widening a formal step in the first-week report.</span><span class="turn">TURN THE CARD ↻</span></button>
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">O’Keefe · Moser &amp; Moser</span><span class="t">Place cells, grid cells, remapping</span>A new environment gets a new map, not an amended old one. Turn the card.</span><span class="face back"><span class="who2">In the field</span><span class="t">Appointment is a remapping event</span>The asset the lender lent against and the asset you are now standing in are different environments. Lay down a fresh map from the site, not an edited copy of the valuation report. <b>Move:</b> first-attendance notes are written before re-reading the file.</span><span class="turn">TURN THE CARD ↻</span></button>
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">Kevin Lynch, 1960</span><span class="t">The image of the city</span>People hold places in mind through five elements: paths, edges, districts, nodes and landmarks. Turn the card.</span><span class="face back"><span class="who2">In the field</span><span class="t">A legible asset is a recoverable asset</span>Lynch called a place “legible” when its parts could be recognised and organised into a coherent pattern. A receiver’s first job is to make the security legible, to the team and later to buyers. <b>Move:</b> draw the asset in Lynch’s five elements (see the map below).</span><span class="turn">TURN THE CARD ↻</span></button>
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">Kelly · Eden &amp; Ackermann</span><span class="t">Causal maps and SODA</span>George Kelly’s personal construct theory, made practical as cognitive and causal mapping in Strategic Options Development and Analysis. Turn the card.</span><span class="face back"><span class="who2">In the field</span><span class="t">Map in the parties’ own words</span>SODA builds a means–ends network in the participants’ own language and treats it as a transitional object that changes as people learn. <b>Move:</b> map the borrower’s account, the occupiers’ account and the lender’s account separately, in their words, then look for the links that no one has noticed.</span><span class="turn">TURN THE CARD ↻</span></button>
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">Fuzzy cognitive maps</span><span class="t">Maps elicited from veterans</span>Military trainers have modelled tactical engagements as fuzzy cognitive maps whose factors and weights are drawn from experienced combat leaders. Turn the card.</span><span class="face back"><span class="who2">In the field</span><span class="t">Make the senior receiver’s map visible</span>The expert’s map is the most valuable asset in a practice and the least documented. <b>Move:</b> after each difficult case, have the lead receiver draw the factors that mattered and how they pushed on each other, and keep the drawings as a library.</span><span class="turn">TURN THE CARD ↻</span></button>
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">Edwin Hutchins, 1995</span><span class="t">Cognition in the wild</span>On the bridge of a navy ship, no one person held the whole picture; the navigation team computed the ship’s position together. Turn the card.</span><span class="face back"><span class="who2">In the field</span><span class="t">The appointment thinks as a team</span>The receiver, managing agent, security contractor, solicitor, selling agent and lender’s recovery manager form one distributed cognitive system. The map lives between them. <b>Move:</b> design the hand-offs (who tells whom what, and how fast) as carefully as the strategy.</span><span class="turn">TURN THE CARD ↻</span></button>
+    </div>
+
+    <h3 style="margin-top:64px">The asset in Lynch’s five elements</h3>
+    <p class="lede" style="font-size:18px">An illustrative mixed-use security, a parade of shops with flats above and a yard behind, drawn the way a receiver should hold it in mind. Select an element.</p>
+    <div class="lynch">
+      <div>
+        <div class="lbtns" id="lynchBtns" role="tablist" aria-label="Lynch elements"></div>
+        <div class="dtools" id="lynchLens" role="group" aria-label="Read the asset as a party"><span class="lab2">Read as</span></div>
+        <svg id="lynchMap" viewBox="0 0 520 400" aria-label="Illustrative map of a secured asset in Lynch’s five elements"></svg>
+      </div>
+      <aside class="panelx" id="lynchPanel" aria-live="polite"></aside>
+    </div>
+    <p class="hint">Click the drawing itself, the element buttons, or read the whole asset through one party’s eyes.</p>
+
+    <h3 style="margin-top:72px">The appointment as a distributed cognitive system</h3>
+    <p class="lede" style="font-size:18px">After Hutchins: no one holds the whole picture. Select a party to see what passes between it and the others, and switch the layer to see information, authority or money.</p>
+    <div class="dgrid">
+      <div>
+        <div class="dtools" id="netLayers" role="group" aria-label="Network layer"><span class="lab2">Layer</span></div>
+        <svg id="net" class="dsvg" viewBox="0 0 560 470" aria-label="Network of parties in an appointment"></svg>
+        <div class="netlegend" id="netLegend"></div>
+      </div>
+      <aside class="panelx" id="netPanel" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- 04 LIVED -->
+<section id="lived">
+  <div class="wrap">
+    <span class="eyebrow">04 · Lived experience</span>
+    <h2>The body at the threshold</h2>
+    <p class="lede">Before a receiver thinks about an asset, the receiver is in it: walking the boundary, trying keys, noticing smells, sounds, signs of use. Phenomenology says this bodily encounter is not a preliminary to understanding. It is understanding, in its first and most reliable form.</p>
+
+    <div class="prose">
+      <h3>Heidegger: when the equipment breaks</h3>
+      <p>In <i>Being and Time</i> Heidegger observes that tools in use withdraw from attention. The carpenter hammering does not see the hammer; he sees the joint. Only when something goes wrong does the hammer appear as a thing with properties. Heidegger names three ways this happens: the tool is damaged (<em>conspicuous</em>), missing (<em>obtrusive</em>), or present but in the way (<em>obstinate</em>).</p>
+      <p>A secured property is equipment in exactly this sense. For the borrower it was a working thing: a rent roll, a business premises, a development on its way to sale. Default is breakdown. The asset suddenly shows itself as a set of problems: a roof, a void, a lease with a break clause, a planning condition. The receiver arrives at the moment of breakdown and inherits all three modes at once. Something is broken (the cash flow, the build). Something is missing (keys, records, the borrower). Something is in the way (an occupier with a disputed tenancy, a contractor’s lien, a neighbour’s right of way). Naming which mode you are facing tells you what kind of move is needed: repair, retrieval, or negotiation.</p>
+
+      <h3>Merleau-Ponty and Dreyfus: knowing with the body</h3>
+      <p>Merleau-Ponty treated the body not as a machine taking orders from the mind but as a <em>body-subject</em>, the living place where perception, action and meaning meet. His “intentional arc” is the web of skills and past experience that projects us into a situation already prepared to see what it offers. Hubert Dreyfus built on this, and on Heidegger, to argue that expert performance is <em>absorbed coping</em>: fluid, responsive, largely unreflective action in which the situation itself solicits the right move. His five stages of skill describe the path from rule-following novice to the expert who no longer consults rules at all.</p>
+      <p>Dreyfus’s critics, Barbara Montero and Anna Petronella Foultier among them, argue that experts do reflect, through a bodily kind of attention that runs alongside action. Both sides are right about receivers. The experienced receiver walks a site in absorbed mode and notices, without trying, the fresh mattress in the plant room. The same receiver then stops, steps out of absorption and asks deliberately what that mattress means for possession, for insurance and for the plan.</p>
+    </div>
+
+    <h3 style="margin-top:52px">Five stages of the receiver’s skill</h3>
+    <p class="lede" style="font-size:18px">Dreyfus’s ladder, written for the field. Select a stage.</p>
+    <div class="ladder">
+      <div>
+        <div class="rungs" id="skillRungs" role="listbox" aria-label="Stages of skill"></div>
+        <div class="rung-end">Bottom: rule-following · Top: absorbed, situational</div>
+      </div>
+      <div class="detail" id="skillDetail" aria-live="polite"></div>
+    </div>
+
+    <div class="prose" style="margin-top:56px">
+      <h3>Gibson: what the asset affords</h3>
+      <p>James J. Gibson’s ecological psychology holds that we perceive the world first as <em>affordances</em>, possibilities for action, not as neutral objects with properties. A ledge affords sitting, a gap affords passage. The concept is relational: what something affords depends on who is perceiving it and what they can do. A receiver who looks at a yard behind a parade and sees “a yard” has seen nothing. The same yard affords overnight parking to a van operator, access to a developer, a ransom strip to a neighbour, a fly-tipping site to the district, and a separate lot to a buyer. Seeing affordances for every party is the fastest route to the full option set.</p>
+
+      <h3>Bourdieu: the feel for the game</h3>
+      <p>Pierre Bourdieu called the socially acquired dispositions that guide practice the <em>habitus</em>, and described its working as a <em>sens pratique</em>, a feel for the game. He also named <em>illusio</em>: being caught up in the game, taking it seriously. Receivership has its own field and its own habitus: the unwritten rules of how lenders, agents, solicitors and borrowers behave, who calls whom, what counts as reasonable. Newcomers know the law and miss the game. The habitus is also a risk: a practice can be so fluent in its own game that it cannot see when a new kind of lender, borrower or asset class is playing a different one.</p>
+
+      <h3>Clausewitz and Gray: friction, the inner light, and the moral weight</h3>
+      <p>Clausewitz named the gap between war on paper and war in the field <em>friction</em>: countless small difficulties that, together, make simple things hard. Against friction and uncertainty he set two qualities: an intellect that keeps some trace of <em>inner light</em> in the obscurity, and the courage to follow it. His <em>coup d’œil</em>, the glance that takes in what matters, is the same capacity Boyd called Fingerspitzengefühl.</p>
+      <p>J. Glenn Gray, a philosopher who served as a counter-intelligence officer in the Second World War, wrote <i>The Warriors</i> from his own journals and letters. His subject was what action in danger does to the people who take it. Receivership is not war, and the analogy must be held lightly. But Gray’s method fits: describe honestly what the work does to the people who do it. Receivers take possession of homes, close businesses and sell what others built. They also rescue stalled schemes, protect tenants and recover money that savers lent. A phenomenology that leaves out that moral weight is incomplete.</p>
+    </div>
+
+    <div class="revs" id="breakCards">
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">Breakdown I · conspicuous</span><span class="t">Something is broken</span>The equipment is damaged and cannot be used. Turn for the receiver’s reading.</span><span class="face back"><span class="who2">Move type · repair</span><span class="t">Income, structure, build</span>Rent has stopped, the roof leaks, the scheme stands at 70%. <b>Move:</b> stabilise first (insure, secure, make safe), then cost the repair against the exit. Repair is justified only by what it adds at sale.</span><span class="turn">TURN THE CARD ↻</span></button>
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">Breakdown II · obtrusive</span><span class="t">Something is missing</span>The tool is absent and its absence fills the field. Turn for the receiver’s reading.</span><span class="face back"><span class="who2">Move type · retrieval</span><span class="t">Keys, records, people</span>No tenancy agreements, no deposit records, no warranties, no borrower. <b>Move:</b> list every missing item and the cheapest lawful source for each. Absence costs time, and time costs value.</span><span class="turn">TURN THE CARD ↻</span></button>
+      <button class="rev" type="button" aria-pressed="false"><span class="face front"><span class="who2">Breakdown III · obstinate</span><span class="t">Something is in the way</span>The tool is present but blocks the work. Turn for the receiver’s reading.</span><span class="face back"><span class="who2">Move type · negotiation</span><span class="t">Occupiers, liens, rights</span>A disputed occupation, a contractor holding the site, a neighbour’s easement. <b>Move:</b> treat each obstacle as a party with its own payoffs. Ask what would make removing itself the better choice for them.</span><span class="turn">TURN THE CARD ↻</span></button>
+    </div>
+
+    <div class="deckbar"><span class="caps">The phenomenologists, card by card</span><button class="chip" data-turnall="lived">Turn all</button><span class="count" data-count="lived"></span></div>
+    <div class="revs" data-deck="lived"></div>
+  </div>
+</section>
+
+<!-- 05 DECIDE -->
+<section id="decide" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">05 · Naturalistic decision-making</span>
+    <h2>How receivers actually decide</h2>
+    <p class="lede">For forty years researchers have studied experts deciding in the field rather than students choosing in the laboratory. Their findings describe the receiver’s situation closely, and they say precisely when to trust the gut and when to slow down.</p>
+
+    <div class="prose">
+      <p>Naturalistic decision-making took shape at a 1989 workshop convened by Judith Orasanu and Gary Klein. Orasanu and Terry Connolly then listed eight features of real decisions that laboratory models ignored: ill-structured problems; uncertain, dynamic environments; shifting, ill-defined or competing goals; action-feedback loops; time stress; high stakes; multiple players; and organisational goals and norms. Read that list slowly and you have described a receivership.</p>
+      <p>Klein’s own studies of fireground commanders produced the <em>recognition-primed decision</em> model. Experienced commanders rarely compared options. They recognised the situation as a kind they had seen, which brought with it plausible goals, cues to watch, expectations and a typical action. They then ran the action forward in imagination. If it worked, they did it; if it snagged, they adapted it; only if it failed did they look for another. The first option an expert considers is usually workable. That is implicit guidance and control, observed in the wild.</p>
+      <p>Mica Endsley’s model of <em>situation awareness</em> gives the same process three levels: perception of the elements in the environment, comprehension of what they mean for one’s goals, and projection of where they are going. Failures at the first level are failures of attention; at the second, of the mental model; at the third, of imagination. Most receivership errors are level-two errors: the facts were seen, but read through the wrong concept of the case.</p>
+    </div>
+
+    <h3 style="margin-top:56px">How naturalistic is this appointment?</h3>
+    <p class="lede" style="font-size:18px">Score a live case against Orasanu and Connolly’s eight features. The reading suggests how far to rely on recognition and how much deliberate analysis to build in.</p>
+    <div class="scorer">
+      <div id="ndmRows"></div>
+      <aside class="result" aria-live="polite">
+        <span class="caps">NDM load</span>
+        <div class="score num" id="ndmScore">0<small> / 24</small></div>
+        <span class="band" id="ndmBand">Move the sliders</span>
+        <p id="ndmText">Each feature scores 0 (absent) to 3 (dominant).</p>
+        <svg id="ndmRadar" viewBox="-60 -10 420 330" style="width:100%;height:auto;margin-top:14px" role="img" aria-label="Octagon chart of the eight naturalistic features"></svg>
+      </aside>
+    </div>
+
+    <div class="prose" style="margin-top:56px">
+      <h3>When to trust the gut: Kahneman and Klein</h3>
+      <p>In 2009 Daniel Kahneman, the great critic of intuition, and Gary Klein, its great defender, wrote a joint paper they subtitled “a failure to disagree”. They concluded that intuitive expertise is real and trustworthy only under two conditions: the environment must be regular enough to have valid cues, and the practitioner must have had enough practice, with rapid and clear feedback, to learn them. Outside those conditions, confidence measures only how coherent a story feels.</p>
+      <p>Receivership is a mixed environment, and the line runs through the middle of it. Some judgments are made thousands of times with quick feedback: whether a property is occupied, whether a tenancy is genuine, whether a site will be re-entered, whether a borrower’s explanation is evidenced. A receiver with a thousand appointments has real intuition there. Other judgments are rare and slow to resolve: the exit price of an unusual asset in a turning market, the outcome of a novel legal point, the behaviour of a lender type the practice has never served. There, intuition should be treated as a hypothesis and checked.</p>
+    </div>
+
+    <h3 style="margin-top:44px">The validity map</h3>
+    <p class="lede" style="font-size:18px">Each receivership judgment placed by how valid its cues are and how fast feedback arrives. Select a judgment; drag any dot to argue with its placement.</p>
+    <div class="dgrid">
+      <svg id="valid" class="dsvg" viewBox="0 0 560 440" aria-label="Map of judgments by cue validity and feedback speed"></svg>
+      <aside class="panelx" id="validPanel" aria-live="polite"></aside>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Judgment in the field</th><th>Validity of cues</th><th>Feedback</th><th>Trust intuition?</th><th>Discipline</th></tr></thead>
+        <tbody>
+          <tr><td>Is the property occupied, and by whom?</td><td>High</td><td>Same day</td><td>Yes, then verify</td><td>Record the cue that triggered the judgment</td></tr>
+          <tr><td>Is this tenancy genuine?</td><td>High once documents seen</td><td>Days to weeks</td><td>Yes, as a working hypothesis</td><td>Seek the one document that would disprove it</td></tr>
+          <tr><td>Will the site be re-entered or stripped?</td><td>Moderate to high</td><td>Days</td><td>Yes; act early</td><td>Security is reversible; loss is not</td></tr>
+          <tr><td>Is the borrower’s plan a plan or a story?</td><td>Moderate</td><td>Weeks</td><td>Partly</td><td>Dated milestones; let evidence decide</td></tr>
+          <tr><td>What will a buyer pay in this market?</td><td>Low to moderate</td><td>Months</td><td>No</td><td>Independent valuation, test marketing, Silven care</td></tr>
+          <tr><td>How will this new type of lender behave?</td><td>Low</td><td>Slow</td><td>No</td><td>Ask, do not assume; write the mission down</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose" style="margin-top:56px">
+      <h3>When sensemaking collapses: Weick at Mann Gulch</h3>
+      <p>In August 1949 a crew of smokejumpers parachuted onto what they took to be a routine fire in Mann Gulch, Montana. The fire was not what they thought, and thirteen men died. Karl Weick’s 1993 analysis, drawn from Norman Maclean’s <i>Young Men and Fire</i>, describes a <em>cosmology episode</em>: the sudden loss of the sense that the world is orderly and rational, in which the crew’s role structure and its sensemaking came apart together. The foreman, Wagner Dodge, survived by improvising, lighting an escape fire and lying down in its ashes. His crew, no longer reading the situation as he did, did not follow.</p>
+      <p>Weick proposed four sources of resilience against such collapse: <em>improvisation</em> and bricolage; <em>virtual role systems</em>, in which each person carries the whole team’s roles in mind; the <em>attitude of wisdom</em>, which holds knowledge and doubt together; and <em>norms of respectful interaction</em>, which keep people talking honestly under stress. Receiverships have their own small cosmology episodes: the day the “vacant” building proves to be someone’s home, the day the buyer vanishes, the day a judge questions the appointment. The four resources are the right preparation for each.</p>
+
+      <h3>Surprise as the signal: Schön</h3>
+      <p>Donald Schön’s reflective practitioner works by <em>knowing-in-action</em> until something surprises him. Surprise triggers <em>reflection-in-action</em>: a rethinking, while the work continues, of how the situation has been framed, followed by on-the-spot experiment. Later comes <em>reflection-on-action</em>, the review after the event. Schön’s point is that surprise is information. The receiver who notices surprise, names it and treats it as a cue to reframe is doing at the speed of practice what Boyd’s destruction and creation describes at the level of theory.</p>
+    </div>
+
+    <div class="deckbar"><span class="caps">Deciding in the field, card by card</span><button class="chip" data-turnall="decide">Turn all</button><span class="count" data-count="decide"></span></div>
+    <div class="revs" data-deck="decide"></div>
+  </div>
+</section>
+
+<!-- 06 MOMENTS -->
+<section id="moments">
+  <div class="wrap">
+    <span class="eyebrow">06 · The tactical phenomenology proper</span>
+    <h2>Seven lived moments of an appointment</h2>
+    <p class="lede">What follows is the core of the treatise: a receivership described as it is lived, in seven moments. For each, the lived experience comes first, then Boyd’s reading, the map to build and the trap to avoid. Step through them in order.</p>
+
+    <div style="margin-top:30px">
+      <div class="dtools" role="group" aria-label="Curves"><span class="lab2">The arc of an appointment</span><span class="hint" style="margin:0">select any point</span></div>
+      <svg id="arc" class="dsvg" viewBox="0 0 900 300" aria-label="Fidelity of the picture and irreversibility across the seven moments"></svg>
+      <div class="netlegend"><span><i style="display:inline-block;width:22px;border-top:2px solid #D2AE63;vertical-align:middle;margin-right:6px"></i>fidelity of the receiver’s picture</span><span><i style="display:inline-block;width:22px;border-top:2px solid #E8875A;vertical-align:middle;margin-right:6px"></i>irreversibility of commitments</span><span><i style="display:inline-block;width:22px;border-top:2px dashed #7FB3E0;vertical-align:middle;margin-right:6px"></i>entropy without remapping</span></div>
+    </div>
+    <div class="stepper" id="momentTabs" role="tablist" aria-label="Seven moments"></div>
+    <div class="moment" id="momentBody" aria-live="polite"></div>
+    <div class="steer">
+      <button class="btn ghost" id="momPrev" type="button">← Previous moment</button>
+      <button class="btn" id="momNext" type="button">Next moment →</button>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CONFLICT -->
+<section id="conflict" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">07 · Planes of conflict</span>
+    <h2>Moral, mental, physical</h2>
+    <p class="lede">Boyd’s stated mission in <i>Patterns of Conflict</i> was to make manifest the nature of moral-mental-physical conflict. A receiver works on all three planes at once, and the order matters: the moral plane decides how fast the other two can move.</p>
+
+    <div class="dgrid">
+      <svg id="planes" class="dsvg" viewBox="0 0 520 440" aria-label="Three planes of conflict as nested rings"></svg>
+      <aside class="panelx" id="planesPanel" aria-live="polite"></aside>
+    </div>
+    <p class="hint">Boyd ranked the planes: the moral is the widest and the most powerful, the physical the narrowest. Select a ring, or a move on it.</p>
+
+    <div class="grid3">
+      <div class="contrast">
+        <span class="caps">Plane I</span>
+        <div class="colhead">Moral</div>
+        <p style="margin-top:8px">For Boyd, moral conflict concerns the codes and standards that shape how people respond, and in practice comes down to trust: build it at home, protect your integrity, and never give the other side cause to doubt it.</p>
+        <ul class="kv" style="margin-top:14px">
+          <li><b>The receiver’s peculiar agency</b>Appointed by the lender, agent of the mortgagor, owing duties in equity. That position is only tenable if everyone can see it is being held honestly.</li>
+          <li><b>Legitimacy is speed</b>Occupiers, agents and courts cooperate faster with a receiver they believe. Each candid letter buys tempo; each sharp practice spends it.</li>
+          <li><b>Move</b>State plainly, early and in writing who you are, whom you act for, what you will do and what you will not.</li>
+        </ul>
+      </div>
+      <div class="contrast">
+        <span class="caps">Plane II</span>
+        <div class="colhead">Mental</div>
+        <p style="margin-top:8px">The contest of pictures: whose account of the situation will prevail with the lender, the occupiers, the buyer and, if it comes to it, the court.</p>
+        <ul class="kv" style="margin-top:14px">
+          <li><b>Ambiguity cuts both ways</b>Boyd prized being hard to predict. A receiver may be unpredictable in route but never unclear in authority or intention.</li>
+          <li><b>Narrative and evidence</b>The borrower arrives with a story; the receiver arrives with a map. Test the story against the map, not the other way round.</li>
+          <li><b>Move</b>Write a one-page “picture of the case” every fortnight and send it to the lender. Whoever holds the best picture sets the agenda.</li>
+        </ul>
+      </div>
+      <div class="contrast">
+        <span class="caps">Plane III</span>
+        <div class="colhead">Physical</div>
+        <p style="margin-top:8px">Possession, keys, security, insurance, income, works. The plane the textbooks describe, and the one where friction is felt most directly.</p>
+        <ul class="kv" style="margin-top:14px">
+          <li><b>Reversibility first</b>Securing, insuring and collecting can be undone or adjusted. Demolition, forfeiture and sale cannot.</li>
+          <li><b>Friction is local</b>The wrong padlock, the absent locksmith, the agent who cannot find the meter. Plan for small failures; they are the ones that happen.</li>
+          <li><b>Move</b>Sequence physical moves so that each one opens options rather than closing them, until the case is ready to decide.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prose" style="margin-top:56px">
+      <h3>Isolation and interaction</h3>
+      <p>In <i>The Strategic Game of ? and ?</i> Boyd answers his own riddle: the game is one of <em>interaction and isolation</em>. A system survives and grows by keeping open its channels of interaction with its environment; it fails when it is cut off from them, morally, mentally or physically. Boyd’s strategy against an adversary was to isolate; his strategy for oneself was to multiply interaction.</p>
+      <p>A receiver should rarely seek to isolate anyone. The receiver’s game is the reverse: to restore interaction around an asset that has become isolated. Defaulted property is usually a property that has fallen out of its connections, with its owner no longer talking to the lender, its occupiers no longer paying, its contractor no longer on site, its market no longer watching. Recovery is the work of reconnecting it: to income, to repair, to buyers, to the lender’s plans. That is why the best receivers are relentless communicators.</p>
+
+      <h3>Cheng and ch’i, held within the law</h3>
+      <p>Boyd took from Sun Tzu the pairing of <em>cheng</em>, the orthodox move that fixes the other side’s attention, and <em>ch’i</em>, the unorthodox move that decides the matter. For a receiver, cheng is the formal apparatus: notices of appointment, rent demands, statutory steps, the regular report. Ch’i is the lawful move nobody expected: a call to the anchor tenant on day one, a quiet sounding of the most likely buyer, an offer to the contractor that makes leaving the site his best option, a proposal to the borrower that makes cooperation pay.</p>
+    </div>
+
+    <div class="deckbar"><span class="caps">Conflict concepts, card by card</span><button class="chip" data-turnall="conflict">Turn all</button><span class="count" data-count="conflict"></span></div>
+    <div class="revs" data-deck="conflict"></div>
+
+    <div class="note"><b>A boundary on borrowing from war.</b> Boyd’s work is about conflict, and parts of it concern deception and the deliberate generation of confusion in an enemy. Those parts do not transfer. A receiver is an officer with duties of good faith, owes care in managing and selling, and is the mortgagor’s agent. Nothing in this treatise recommends misleading anyone. What transfers is Boyd’s account of orientation, tempo, trust and adaptation, and his insistence that the side with the better picture of reality usually prevails.</div>
+  </div>
+</section>
+
+<!-- 08 CLIMATE -->
+<section id="climate">
+  <div class="wrap">
+    <span class="eyebrow">08 · Organic design</span>
+    <h2>The climate that makes tempo possible</h2>
+    <p class="lede">Boyd’s <i>Organic Design for Command and Control</i> argues that fast, adaptive action comes from implicit understanding and trust, not from more explicit instruction. He named the ingredients of that climate. Rate your own practice, or one appointment team, on each.</p>
+
+    <div class="radarbox">
+      <div>
+        <div id="climRows"></div>
+        <p class="radarread" id="climRead"></p>
+        <p class="hint">Drag the gold points on the chart, or use the sliders.</p>
+      </div>
+      <svg id="radar" viewBox="-45 0 510 400" role="img" aria-label="Radar chart of the five climate elements"></svg>
+    </div>
+
+    <div class="prose" style="margin-top:48px">
+      <p>Chet Richards, who knew Boyd’s thinking better than anyone, notes that Boyd never treated individual skill as an end in itself. Fingerspitzengefühl matters only if it improves the performance of the whole team. For a receivership practice the implication is direct: the measure of a senior receiver is not how many cases they can carry alone, but how much of their orientation lives on in the people they work with.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 09 CHECK -->
+<section id="check" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">09 · An instrument</span>
+    <h2>Twelve questions to test orientation before you act</h2>
+    <p class="lede">Built on Boyd’s five elements of orientation and on the research above. Answer for one live appointment. The aim is not a grade; it is to find where the picture is weakest before the situation finds it for you.</p>
+
+    <div class="check">
+      <div class="qs" id="oq"></div>
+      <aside class="result" aria-live="polite">
+        <span class="caps">Orientation read</span>
+        <div class="score num" id="oScore">0<small> / 24</small></div>
+        <span class="band" id="oBand">Not yet answered</span>
+        <p id="oText">Mark each question Clear, Unclear or Concern. Unclear counts 1, Concern counts 2.</p>
+        <p class="answered" id="oCount">0 of 12 answered</p>
+        <p class="answered" id="oWeak"></p>
+        <button class="linkbtn" id="oReset" type="button">Clear answers</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 10 SITUATIONS -->
+<section id="situations">
+  <div class="wrap">
+    <span class="eyebrow">10 · Situation navigator</span>
+    <h2>Three situations, read the Boyd way</h2>
+    <p class="lede">Illustrative patterns, composites rather than cases, and not advice on any particular appointment. Each move is tagged by whether it can be undone, because keeping options open is where value is kept.</p>
+    <div class="tabs" id="sitTabs" role="tablist" aria-label="Situations"></div>
+    <div class="scen" id="sitBody" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- 11 RENEWAL -->
+<section id="renewal" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">11 · Renewal</span>
+    <h2>Destruction and creation of the practitioner</h2>
+    <p class="lede">Boyd’s argument applies to the receiver as well as to the case. An orientation that is never broken open and rebuilt runs down. Step through the cycle to see it applied to a practitioner’s own concept of how receiverships go.</p>
+
+    <div class="cycle">
+      <svg id="cycleSvg" viewBox="0 0 300 300" aria-hidden="true"></svg>
+      <div>
+        <span class="phk" id="cyK"></span>
+        <div class="ph" id="cyT"></div>
+        <p id="cyD" style="margin-top:12px"></p>
+        <div class="steer"><button class="btn" id="cyNext" type="button">Turn the cycle →</button></div>
+      </div>
+    </div>
+    <p class="hint">Click any phase on the circle.</p>
+
+    <h3 style="margin-top:56px">Build a snowmobile</h3>
+    <p class="lede" style="font-size:18px">Boyd’s creative induction: pick at least three parts, some from the old concept and some from other domains, and see the new concept they make.</p>
+    <div class="snow" id="snowParts"></div>
+    <div class="snowout" id="snowOut" aria-live="polite"></div>
+
+    <div class="deckbar"><span class="caps">Practice and renewal, card by card</span><button class="chip" data-turnall="practice">Turn all</button><span class="count" data-count="practice"></span></div>
+    <div class="revs" data-deck="practice"></div>
+
+    <h3 style="margin-top:64px">A regime for building Fingerspitzengefühl</h3>
+    <div class="steps">
+      <div class="step"><div class="sn">1</div><h3>Decision games</h3><p>Short written scenarios in the style of the Marine Corps tactical decision game: a site, a problem, ten minutes, a decision and a reason. Then compare with a senior receiver’s answer.</p></div>
+      <div class="step"><div class="sn">2</div><h3>Critical decision interviews</h3><p>After each difficult case, interview the lead receiver Klein’s way: what did you notice, what did you expect, what would a novice have missed, where did the picture change?</p></div>
+      <div class="step"><div class="sn">3</div><h3>Pre-mortems</h3><p>Before the route is fixed, assume the receivership has failed and ask the team to write why. It is the cheapest way to break a strip-map.</p></div>
+      <div class="step"><div class="sn">4</div><h3>Pattern library</h3><p>Keep the drawn maps, the moments of surprise and the outcomes of every case. A thousand appointments are worth little if their patterns live in one head.</p></div>
+      <div class="step"><div class="sn">5</div><h3>Feedback where it is slow</h3><p>For low-validity judgments such as exit pricing, record the forecast and the reason at the time, and revisit it at completion. Without that loop intuition never calibrates.</p></div>
+      <div class="step"><div class="sn">6</div><h3>Shadowed first attendances</h3><p>Juniors attend sites with seniors and narrate what they notice aloud; seniors narrate after. The gap between the two accounts is the curriculum.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 THESES -->
+<section id="theses">
+  <div class="wrap">
+    <span class="eyebrow">12 · Coda</span>
+    <h2>Twenty theses for a tactical phenomenology of receivership</h2>
+    <p class="vatic">The office is defined by statute. The work is defined by encounter. What follows is offered as a set of propositions to argue with, not a creed.</p>
+    <ol class="theses">
+      <li><b>THE FIELD PRECEDES THE FILE</b>A receiver is appointed into a moving situation; the documents describe where it was, not where it is.</li>
+      <li><b>ORIENTATION IS THE CENTRE</b>Observation, decision and action all pass through how the receiver already sees the case. Improve that, and everything downstream improves.</li>
+      <li><b>THE MAP NARROWS UNDER PRESSURE</b>Urgency produces the strip-map. Widen the map deliberately before you commit to the route.</li>
+      <li><b>APPOINTMENT IS REMAPPING</b>Lay down a new map from the site. Do not edit the lender’s old one.</li>
+      <li><b>THE BODY KNOWS FIRST</b>Walk the boundary before reading the lease. Much of what matters is perceived before it is understood.</li>
+      <li><b>NAME THE BREAKDOWN</b>Broken, missing or in the way: each calls for a different kind of move.</li>
+      <li><b>SEE WHAT IT AFFORDS, TO EVERYONE</b>The full option set is the sum of what the asset offers to every party who could act on it.</li>
+      <li><b>RECOGNITION IS NOT GUESSWORK</b>Where cues are valid and feedback is fast, the expert’s first option is usually right. Act on it, and watch.</li>
+      <li><b>WHERE FEEDBACK IS SLOW, CHECK THE GUT</b>Exit price, novel law and new lender types are low-validity zones. Treat intuition there as a hypothesis.</li>
+      <li><b>SURPRISE IS INFORMATION</b>Every surprise is the situation telling you that your concept of the case has started to decay.</li>
+      <li><b>DESTROY THE CONCEPT, KEEP THE PIECES</b>When the evidence turns, break the old picture apart and rebuild from its parts and new ones.</li>
+      <li><b>TEMPO IS NOT HASTE</b>Tempo is changing the situation faster than it can surprise you, by preparing the next move before you need it.</li>
+      <li><b>REVERSIBLE BEFORE IRREVERSIBLE</b>Sequence the moves so each one opens options, until the case is ready to decide.</li>
+      <li><b>THE MORAL PLANE SETS THE SPEED</b>Trust is the fastest medium a receiver has. Integrity is not a cost of the work; it is its engine.</li>
+      <li><b>RECONNECT THE ISOLATED ASSET</b>Default is isolation. Recovery is the restoration of interaction: with income, repair, buyers and plans.</li>
+      <li><b>CHENG FIXES, CH’I DECIDES</b>Run the formal process well, and pair it with the lawful move nobody expected.</li>
+      <li><b>THE INSTRUCTION IS A MISSION</b>A good instruction letter says what and why, sets the limits, and leaves the how to the receiver.</li>
+      <li><b>THE APPOINTMENT THINKS AS A TEAM</b>The picture lives between receiver, agents, solicitors and lender. Design the hand-offs.</li>
+      <li><b>DESCRIBE WHAT THE WORK DOES TO US</b>Receivers handle homes, livelihoods and savings. A phenomenology without moral weight is a manual.</li>
+      <li><b>EXPERIENCE MUST BE MADE TEACHABLE</b>FINGERTIP FEEL THAT DIES WITH ITS OWNER WAS NEVER AN ASSET OF THE PRACTICE. WRITE IT DOWN, DRAW IT, PASS IT ON.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="eyebrow">Sources</span>
+    <ol>
+      <li><a href="https://markdownham88-crypto.github.io/complexity-as-credit-tactics/">Mark Downham, Complexity as Credit Tactics</a></li>
+      <li><a href="https://tasshin.com/blog/the-strategic-theory-of-john-boyd/">Tasshin Fogleman, The Strategic Theory of John Boyd</a></li>
+      <li><a href="https://mail.code7700.com/pdfs/john_boyd/destruction_and_creation_john_boyd.pdf">John R. Boyd, Destruction and Creation (3 September 1976)</a></li>
+      <li><a href="https://www.usmcu.edu/Portals/218/HD/Digitized%20Collections/COLL_2062%20John%20Boyd/COLL%202062_John%20Boyd_Box%208/110131-The%20Essence%20of%20Winning%20and%20Losing%20Briefing.PDF">John R. Boyd, The Essence of Winning and Losing (1995, rev. 1996), USMC University archive</a></li>
+      <li><a href="https://www.usmcu.edu/Portals/218/HD/Digitized%20Collections/COLL_2062%20John%20Boyd/COLL_2062_John%20Boyd_Box%2014/110361-Briefing.PDF">John R. Boyd, Patterns of Conflict, ed. Richards and Spinney (2005)</a></li>
+      <li><a href="https://www.usmcu.edu/Portals/218/HD/Digitized%20Collections/COLL_2062%20John%20Boyd/COLL%202062_John%20Boyd_Box%208/110134-A%20Discourse%20on%20Winning%20and%20Losing.PDF">John R. Boyd, A Discourse on Winning and Losing (1987), USMC University archive</a></li>
+      <li><a href="https://slightlyeastofnew.com/wp-content/uploads/2010/03/how-boyd-uses-gh2l.pdf">Chet Richards, Far from Analogies: How Boyd Used Gödel, Heisenberg and the Second Law (2017)</a></li>
+      <li><a href="https://slightlyeastofnew.com/2014/07/10/fingerspitzengefuhl-how-long-does-it-take/">Chet Richards, Fingerspitzengefühl: How long does it take?</a></li>
+      <li><a href="https://slightlyeastofnew.com/2014/09/30/whence-fingerspitzengefuehl/">Chet Richards, Whence Fingerspitzengefühl?</a></li>
+      <li><a href="https://www.yorku.ca/pclassic/Tolman/Maps/maps.htm">Edward C. Tolman, Cognitive Maps in Rats and Men, Psychological Review 55(4), 1948</a></li>
+      <li><a href="https://www.nobelprize.org/nobel_prizes/medicine/laureates/2014/press.html">Nobel Assembly, press release, Nobel Prize in Physiology or Medicine 2014</a></li>
+      <li><a href="https://quantamagazine.org/the-brain-maps-out-ideas-and-memories-like-spaces-20190114">Quanta Magazine, The Brain Maps Out Ideas and Memories Like Spaces (2019)</a></li>
+      <li><a href="https://www.supersummary.com/the-image-of-the-city/summary/">Kevin Lynch, The Image of the City (1960), summary</a></li>
+      <li><a href="https://strathprints.strath.ac.uk/72174">Fran Ackermann and Colin Eden, Strategic Options Development and Analysis (2020)</a></li>
+      <li><a href="https://www.academia.edu/647989/Getting_started_with_cognitive_mapping">Ackermann, Eden and Cropper, Getting Started with Cognitive Mapping (1992)</a></li>
+      <li><a href="https://patents.google.com/patent/US9489631">Cognitive Map-Based Decision Simulation for Training (US9489631B2)</a></li>
+      <li><a href="https://pages.ucsd.edu/~ehutchins/citw.html">Edwin Hutchins, Cognition in the Wild (MIT Press, 1995)</a></li>
+      <li><a href="https://www.supersummary.com/being-and-time/division-1-chapter-3">Martin Heidegger, Being and Time, Division 1, ch. 3, summary</a></li>
+      <li><a href="https://www.youonai.ai/fieldguide/txt/breakdown_heidegger.html">Breakdown (Heidegger): conspicuous, obtrusive, obstinate</a></li>
+      <li><a href="https://philarchive.org/archive/WHIQDS">Justin F. White, Hubert Dreyfus: Skillful Coping and the Nature of Everyday Expertise</a></li>
+      <li><a href="https://link.springer.com/content/pdf/10.1007/s11097-022-09838-2.pdf">Anna Petronella Foultier, Letting the Body Find Its Way, Phenomenology and the Cognitive Sciences (2023)</a></li>
+      <li><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02228/pdf">Lobo, Heras-Escribano and Travieso, The History and Philosophy of Ecological Psychology (2018)</a></li>
+      <li><a href="https://simplypsychology.org/pierre-bourdieu-habitus.html">Pierre Bourdieu and habitus, overview</a></li>
+      <li><a href="https://www.marxists.org/reference/archive/clausewitz/works/on-war/book1/ch03.htm">Carl von Clausewitz, On War, Book I, ch. 3, The Genius for War</a></li>
+      <li><a href="https://cclib.ucsd.edu/library/details.aspx?ID=6376">J. Glenn Gray, The Warriors: Reflections on Men in Battle</a></li>
+      <li><a href="https://www.fs.usda.gov/eng/pubs/htmlpubs/htm95512855/page13.htm">Gary Klein, Naturalistic Decision Making and Wildland Firefighting (1995)</a></li>
+      <li><a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/BAE3FA1A1DD2A45F419BA89CAC214DE3">Professional Judgments and Naturalistic Decision Making (Cambridge Handbook of Expertise)</a></li>
+      <li><a href="https://www.aviation.govt.nz/assets/safety/human-factors/situational-awareness-guidance.pdf">Civil Aviation Authority of New Zealand, Situational Awareness guidance (Endsley’s three levels)</a></li>
+      <li><a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/strategic-decisions-when-can-you-trust-your-gut">Kahneman and Klein, Strategic decisions: when can you trust your gut? (McKinsey Quarterly)</a></li>
+      <li><a href="https://dl1.cuni.cz/mod/resource/view.php?id=153128">Kahneman and Klein, Conditions for Intuitive Expertise: A Failure to Disagree, American Psychologist 64(6), 2009</a></li>
+      <li><a href="https://www.fs.usda.gov/eng/pubs/htmlpubs/htm95512855/page18.htm">Karl E. Weick, The Collapse of Sensemaking in Organizations: The Mann Gulch Disaster (1993)</a></li>
+      <li><a href="https://content.iriss.org.uk/reflectivepractice/practitioner.html">Donald Schön, The Reflective Practitioner, overview</a></li>
+      <li><a href="https://www.htsoukas.com/wp-content/uploads/2014/05/2009-D.-Yanow-What-is-reflection-in-action.pdf">Yanow and Tsoukas, What is Reflection-in-Action? A Phenomenological Account (2009)</a></li>
+      <li><a href="https://www.vailwilliams.com/property-receivership-trends-2026/">Vail Williams, Property distress in 2026 (Nara receivership data, July 2026)</a></li>
+      <li><a href="https://www.vailwilliams.com/rising-receivership-appointments-signal-further-distress-in-the-property-market/">Vail Williams, Rising receivership appointments signal further distress (2025)</a></li>
+      <li><a href="https://www.allsop.co.uk/insights/why-receivership-matters-for-property-market-renewal/">Allsop, Why receivership matters for property market renewal (2025)</a></li>
+      <li><a href="https://www.irwinmitchell.com/news-and-insights/expert-comment/post/102n7e5/receivership-appointment-mistakes-under-scrutiny-key-lessons-from-blcp-eden-1-l">Irwin Mitchell, BLCP Eden 1 Ltd v Rooksmead Securities Ltd [2026] EWHC 1268 (Ch)</a></li>
+      <li><a href="https://www.charlesrussellspeechlys.com/globalassets/pdfs/2405-alison-goldthorp.pdf">Charles Russell Speechlys, receivers’ duties: Medforth v Blake and Silven Properties</a></li>
+      <li><a href="https://www.insolvencydirect.bis.gov.uk/freedomofinformationtechnical/technicalmanual/ch61-72/chapter69/part4/part_4.htm">Insolvency Service technical manual, the LPA receiver’s duties</a></li>
+      <li><a href="https://caselaw.nationalarchives.gov.uk/ewca/civ/2015/1122">Purewal v Countrywide Residential Lettings [2015] EWCA Civ 1122</a></li>
+    </ol>
+    <p class="fine">Principia Humanitatis · Mark Downham BA (Hons) MPhil MBA FRICS FNARA RPR. This treatise describes a way of thinking about receivership practice. It is not legal advice and not advice on any particular loan, appointment or situation. Situations in section 10 are composites.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var NS="http://www.w3.org/2000/svg";
+  function $(id){return document.getElementById(id);}
+  function svgEl(parent,n,a,txt){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;parent.appendChild(e);return e;}
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+  /* ---------- vocabulary toggle ---------- */
+  var vB=$("vBoyd"), vR=$("vRec");
+  function setVocab(rec){document.body.classList.toggle("src-mode",rec);vB.setAttribute("aria-pressed",String(!rec));vR.setAttribute("aria-pressed",String(rec));}
+  vB.addEventListener("click",function(){setVocab(false);});
+  vR.addEventListener("click",function(){setVocab(true);});
+
+  /* ---------- reversible cards ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll(".rev"),function(c){
+    c.addEventListener("click",function(){var on=!c.classList.contains("on");c.classList.toggle("on",on);c.setAttribute("aria-pressed",String(on));});
+  });
+
+  /* ---------- OODA sketch ---------- */
+  var OODA={
+    env:{t:"Unfolding circumstances",q:"The world does not wait for the receiver.",boyd:"Outside information and unfolding circumstances enter the loop whether or not we are ready for them. The environment keeps changing independently of our picture of it.",field:"The lender’s file, the valuation, Land Registry, the borrower’s correspondence, and then the site itself: occupiers, neighbours, contractors, the weather, the market.",trap:"Treating the file as the world. The file is a photograph of a situation that has since moved."},
+    obs:{t:"Observe",q:"You see what your orientation lets you see.",boyd:"Observation takes in outside information, unfolding circumstances and feedback from our own actions. It is already shaped by orientation through implicit guidance and control.",field:"First attendance, the walk of the boundary, the keys that do and do not work, the first conversations, the documents that are missing.",trap:"Observing only what confirms the instruction. Record what you expected and, separately, what you found."},
+    ori:{t:"Orient",q:"The centre of gravity of the whole loop.",boyd:"Every arrow in the sketch passes through orientation. It is the interaction of cultural traditions, genetic heritage, previous experience, new information and analysis and synthesis, and it governs both what we observe and how we act.",field:"The receiver’s concept of the case: what kind of situation this is, what matters most, who can change it, how it is likely to end.",trap:"The strip-map: one route, set under pressure, defended against evidence. Select any of the five elements inside Orient for its own reading."},
+    cul:{t:"Cultural traditions",q:"The game you are playing, and the lender’s game.",boyd:"Shared codes and standards shape perception and response. Boyd placed culture inside orientation, not outside it.",field:"The appointing lender’s culture (a debt fund is not a building society), the practice’s own habits, the local market’s norms. Bourdieu’s habitus and feel for the game live here.",trap:"Assuming every lender wants what a clearing bank wants, or that this market moves as fast as the last one."},
+    gen:{t:"Genetic heritage",q:"Temperament is part of the terrain.",boyd:"Inherited dispositions set how we tend to perceive and react before any learning. Boyd counted them as a real input to orientation.",field:"The receiver’s temperament: appetite for confrontation, tolerance of ambiguity, pace. Some receivers default to avoiding conflict, others to forcing it.",trap:"Letting temperament choose the route. Name your default and ask whether this case needs it; pair contrasting temperaments on hard cases."},
+    exp:{t:"Previous experience",q:"A thousand appointments are a library, not a template.",boyd:"Past experience supplies an implicit repertoire of patterns and skills that lets us recognise situations quickly.",field:"Data point patterning: how schemes stall, how value leaks, what an unevidenced explanation sounds like. Klein’s recognition-primed decisions draw on exactly this.",trap:"The case that looks like the last one but is not. Name the closest precedent and one way this case differs."},
+    nwi:{t:"New information",q:"Surprise is the situation correcting you.",boyd:"Fresh information from the environment must keep entering orientation, or the concept closes on itself and decays.",field:"The fresh mattress in the plant room, the tenant who has a lease no one mentioned, the buyer who appears from nowhere. Schön’s surprise belongs here.",trap:"Filing surprises instead of using them. Keep a short surprise log and ask what each one changes."},
+    ans:{t:"Analysis & synthesis",q:"Break the concept apart; build a better one.",boyd:"Destructive deduction separates the parts of a failing concept; creative induction recombines them, with parts from other domains, into one that fits. Boyd’s snowmobile.",field:"The fortnightly rewrite of the picture of the case; the move from “vacant site for sale” to “occupied site with a ransom strip and a motivated neighbour”.",trap:"Adding facts to an old picture instead of redrawing it."},
+    dec:{t:"Decide",q:"A decision is a hypothesis.",boyd:"Decision selects among the options orientation generates, and Boyd labelled it a hypothesis to be tested by action.",field:"Choosing the route to test: hold and collect, complete and sell, sell as is, negotiate a consensual exit. Klein’s experts simulate the action in imagination before committing.",trap:"Treating the route as settled. Write down what would show you were wrong."},
+    act:{t:"Act",q:"Action is the test.",boyd:"Action tests the hypothesis against the environment and generates new circumstances, which return as observation.",field:"Notices, security, rent redirection, marketing, works, sale. Reversible actions first, so each test teaches without closing options.",trap:"Irreversible action on an untested picture: forfeiture, demolition, a hurried sale."},
+    igc:{t:"Implicit guidance & control",q:"Where expertise skips the meeting.",boyd:"Orientation guides observation and action directly, without passing through explicit decision. This is where speed really comes from, and it depends on trust and Fingerspitzengefühl.",field:"The experienced receiver changes the locks, calls the anchor tenant or stops a contractor without convening anyone, because the mission in the instruction already allows it.",trap:"Running every action through explicit sign-off. That makes the loop slow precisely when the situation is fast."},
+    fb:{t:"Feedback",q:"Close the loop faster than the situation moves.",boyd:"Results of decision and action return to observation. The whole loop is an ongoing, many-sided cross-referencing process, not a sequence.",field:"Occupiers’ reactions, rent received or not, buyer interest, the lender’s response to the report. Each one should reshape the picture within days.",trap:"Reporting cycles slower than the case. If the lender hears monthly and the site changes weekly, the picture is always out of date."}
+  };
+  var oodaSvg=$("ooda"), oodaPanel=$("oodaPanel"), oodaNodes={};
+  (function buildOoda(){
+    var s=oodaSvg;
+    var defs=svgEl(s,"defs",{});
+    [["ah","#8EA0B6"],["ahg","#D2AE63"],["ahb","#7FB3E0"]].forEach(function(m){
+      var mk=svgEl(defs,"marker",{id:m[0],viewBox:"0 0 10 10",refX:"9",refY:"5",markerWidth:"7",markerHeight:"7",orient:"auto-start-reverse"});
+      svgEl(mk,"path",{d:"M0 0 L10 5 L0 10 z",fill:m[1]});
+    });
+    function line(d,cls,mk){var a={d:d,"class":"lnk flow "+(cls||""),"data-k":cls||"ff"};if(mk)a["marker-end"]="url(#"+mk+")";var p=svgEl(s,"path",a);if(!cls)p.setAttribute("stroke-dasharray","8 4");}
+    // feed forward
+    line("M140 92 L140 176","","ah");
+    line("M210 240 L246 240","","ah");
+    line("M586 240 L626 240","","ah");
+    line("M736 240 L770 240","","ah");
+    line("M880 214 L892 214 L892 26 L140 26 L140 34","","ah");
+    svgEl(s,"text",{x:520,y:20,"font-size":12,"text-anchor":"middle",fill:"#8EA0B6"},"action unfolds an interaction with the environment");
+    // implicit guidance & control
+    line("M470 120 L470 90","gc","ahg");
+    line("M372 70 C 250 70, 200 110, 190 176","gc","ahg");
+    line("M572 70 C 760 70, 825 120, 825 204","gc","ahg");
+    // feedback
+    line("M681 276 L681 432 L582 432","fb","ahb");
+    line("M825 276 L825 432 L700 432","fb","");
+    line("M372 432 L120 432 L120 306","fb","ahb");
+    function node(id,x,y,w,h,label,sub,big){
+      var g=svgEl(s,"g",{"class":"nd",tabindex:"0",role:"button","aria-label":OODA[id].t,"data-id":id});
+      svgEl(g,"title",{},OODA[id].t+" — "+OODA[id].q);
+      svgEl(g,"rect",{x:x,y:y,width:w,height:h,rx:2});
+      svgEl(g,"text",{x:x+w/2,y:y+(sub?h/2-2:h/2+6),"text-anchor":"middle","class":big?"big":"","font-size":big?24:13},label);
+      if(sub)svgEl(g,"text",{x:x+w/2,y:y+h/2+16,"text-anchor":"middle","font-size":12,fill:"#8EA0B6"},sub);
+      g.addEventListener("click",function(){selOoda(id);});
+      g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();selOoda(id);}});
+      oodaNodes[id]=g;return g;
+    }
+    node("env",30,36,220,56,"Unfolding circumstances","outside information");
+    node("obs",30,176,180,130,"Observe","",true);
+    node("ori",248,120,338,256,"","",false);
+    svgEl(s,"text",{x:417,y:150,"text-anchor":"middle","class":"big"},"Orient");
+    node("cul",262,166,152,52,"Cultural traditions");
+    node("gen",420,166,152,52,"Genetic heritage");
+    node("ans",306,232,222,54,"Analysis & synthesis","destruction and creation");
+    node("exp",262,302,152,52,"Previous experience");
+    node("nwi",420,302,152,52,"New information");
+    node("dec",626,196,110,90,"Decide","(hypothesis)",true);
+    node("act",770,196,110,90,"Act","(test)",true);
+    node("igc",372,48,200,44,"Implicit guidance & control");
+    node("fb",372,410,210,44,"Feedback");
+  })();
+  function selOoda(id){
+    var d=OODA[id];
+    for(var k in oodaNodes)oodaNodes[k].classList.toggle("sel",k===id);
+    oodaPanel.innerHTML='<span class="caps">Boyd’s sketch</span><h3>'+esc(d.t)+'</h3><p class="q">'+esc(d.q)+'</p><dl><dt>In Boyd’s terms</dt><dd>'+esc(d.boyd)+'</dd><dt>In the receivership</dt><dd>'+esc(d.field)+'</dd><dt>The trap</dt><dd>'+esc(d.trap)+'</dd></dl>';
+  }
+  selOoda("ori");
+
+  /* ---------- Lynch map ---------- */
+  var LY={
+    paths:{t:"Paths",def:"Channels along which people move: streets, walkways, transit lines. For most people the dominant element of their image.",here:"The high street frontage and its footfall; the rear service lane; the side door and stair to the flats; and, less visibly, the paths of money: rent from flats, rent from shops, service charge, utilities.",q:"Which paths carry value, and which are blocked?",move:"Walk every physical path at the times it is used, then trace every cash path to a named payer and a named account."},
+    edges:{t:"Edges",def:"Linear boundaries not used as paths: shores, railway cuttings, walls, the edges of development.",here:"The title boundary (and where it differs from the fence); the demise lines in each lease; the railway embankment; the planning boundary between retail and residential use.",q:"Where does the security actually end, and who disputes it?",move:"Overlay the title plan, the lease plans and the site as found. Every mismatch is a risk or an opportunity."},
+    districts:{t:"Districts",def:"Medium-to-large areas recognised as having a common character, which the observer mentally enters.",here:"The retail frontage, the residential upper parts and the rear yard: three districts with different occupiers, different law and different buyers.",q:"Is this one asset or three?",move:"Price and plan each district separately before deciding whether to sell as one lot or several."},
+    nodes:{t:"Nodes",def:"Strategic points the observer can enter: junctions, crossings, concentrations of activity.",here:"The yard gate (who holds the key holds the yard); the side door to the flats; the meter cupboard; the managing agent’s office where deposits and records sit.",q:"Which junctions control the asset?",move:"Secure or gain lawful access to every node in the first week. Control of nodes is control of tempo."},
+    landmarks:{t:"Landmarks",def:"Point references seen from outside: buildings, signs, features by which people orient.",here:"The anchor pharmacy on the corner; the neighbour’s new development over the fence; the shop sign the whole town knows.",q:"What do buyers and occupiers orient by?",move:"Engage the anchor occupier early and understand the neighbour’s plans. Landmarks shape how the market reads the whole parade."}
+  };
+  var lyKeys=["paths","edges","districts","nodes","landmarks"], lySvg=$("lynchMap"), lyBtns=$("lynchBtns"), lyPanel=$("lynchPanel"), lyShapes=[];
+  (function buildLynch(){
+    var s=lySvg;
+    function sh(tag,a,el){a["data-el"]=el||"";a["class"]="hl";a.style="cursor:pointer";var e=svgEl(s,tag,a);svgEl(e,"title",{},LY[el].t+": click to read");e.addEventListener("click",function(){selLy(el);});lyShapes.push(e);return e;}
+    function tx(x,y,t,el,anchor){var e=svgEl(s,"text",{x:x,y:y,"font-size":12,fill:"#8EA0B6","text-anchor":anchor||"middle","font-family":"IBM Plex Sans, Arial, sans-serif","data-el":el||"",style:"cursor:pointer"},t);e.addEventListener("click",function(){selLy(el);});lyShapes.push(e);return e;}
+    // railway embankment (edge)
+    sh("rect",{x:470,y:10,width:40,height:300,fill:"#13243B",stroke:"#2A4262","stroke-width":2},"edges");
+    tx(490,160,"railway","edges").setAttribute("transform","rotate(90 490 160)");
+    // service lane (path)
+    sh("rect",{x:10,y:14,width:450,height:30,fill:"#13243B",stroke:"#2A4262","stroke-width":2},"paths");
+    tx(235,34,"rear service lane","paths");
+    // yard (district)
+    sh("rect",{x:40,y:58,width:410,height:118,fill:"#16283F",stroke:"#2A4262","stroke-width":2},"districts");
+    tx(245,118,"rear yard · parking · stores","districts");
+    // yard gate (node)
+    sh("circle",{cx:150,cy:51,r:9,fill:"#0C1726",stroke:"#8EA0B6","stroke-width":2},"nodes");
+    tx(176,72,"yard gate","nodes","start");
+    // shops (district) + flats
+    var xs=[40,124,208,292,376];
+    xs.forEach(function(x,i){
+      sh("rect",{x:x,y:190,width:i===4?74:80,height:100,fill:"#182C46",stroke:"#2A4262","stroke-width":2},"districts");
+    });
+    tx(160,228,"flats above (upper parts)","districts");
+    tx(160,270,"retail frontage","districts");
+    // anchor (landmark)
+    sh("rect",{x:376,y:190,width:74,height:100,fill:"#1E3555",stroke:"#7FB3E0","stroke-width":2},"landmarks");
+    tx(413,236,"anchor","landmarks");tx(413,252,"pharmacy","landmarks");
+    // side door (node)
+    sh("rect",{x:198,y:280,width:16,height:12,fill:"#0C1726",stroke:"#8EA0B6","stroke-width":2},"nodes");
+    tx(206,306,"side door","nodes");
+    // meter cupboard node
+    sh("circle",{cx:60,cy:283,r:7,fill:"#0C1726",stroke:"#8EA0B6","stroke-width":2},"nodes");
+    tx(60,306,"meters","nodes");
+    // high street path
+    sh("rect",{x:10,y:318,width:500,height:40,fill:"#13243B",stroke:"#2A4262","stroke-width":2},"paths");
+    tx(260,343,"high street · footfall","paths");
+    // cash paths (dotted)
+    sh("path",{d:"M100 300 C 100 380, 420 380, 430 370",fill:"none",stroke:"#2A4262","stroke-width":2,"stroke-dasharray":"3 5"},"paths");
+    tx(270,388,"rent & service charge paths","paths");
+    // title boundary (edge)
+    sh("path",{d:"M30 52 L460 52 L460 300 L30 300 Z",fill:"none",stroke:"#E8875A","stroke-width":1.5,"stroke-dasharray":"8 5",opacity:.8},"edges");
+    tx(40,186,"title edge","edges","start");
+    // neighbour development landmark
+    sh("rect",{x:452,y:362,width:58,height:30,fill:"#16283F",stroke:"#2A4262","stroke-width":2},"landmarks");
+    tx(481,382,"new dev","landmarks");
+  })();
+  lyKeys.forEach(function(k){
+    var b=document.createElement("button");b.className="tab";b.type="button";b.setAttribute("role","tab");b.textContent=LY[k].t;b.dataset.k=k;
+    b.addEventListener("click",function(){selLy(k);});lyBtns.appendChild(b);
+  });
+  function selLy(k){
+    Array.prototype.forEach.call(lyBtns.children,function(b){b.setAttribute("aria-selected",String(b.dataset.k===k));});
+    lyShapes.forEach(function(e){
+      var on=e.getAttribute("data-el")===k;
+      if(e.tagName==="text"){e.setAttribute("fill",on?"#D2AE63":"#8EA0B6");e.setAttribute("font-weight",on?"600":"400");}
+      else{
+        if(!e.dataset.os){e.dataset.os=e.getAttribute("stroke");e.dataset.ow=e.getAttribute("stroke-width");}
+        e.setAttribute("stroke",on?"#D2AE63":e.dataset.os);e.setAttribute("stroke-width",on?"3":e.dataset.ow);
+        e.style.opacity=on?"1":"0.55";
+      }
+    });
+    var d=LY[k];
+    lyPanel.innerHTML='<span class="caps">Lynch element</span><h3>'+esc(d.t)+'</h3><p class="q">'+esc(d.q)+'</p><dl><dt>Lynch’s definition</dt><dd>'+esc(d.def)+'</dd><dt>In this asset</dt><dd>'+esc(d.here)+'</dd><dt>Move</dt><dd>'+esc(d.move)+'</dd></dl>';
+  }
+  window.__LY={sel:selLy,shapes:lyShapes,data:LY,panel:lyPanel,btns:lyBtns};
+  selLy("paths");
+
+  /* ---------- Dreyfus skill ladder ---------- */
+  var SK=[
+    {n:"Stage 1",t:"Novice",q:"Follows the procedure manual line by line.",rule:95,sit:10,see:"Checklist items: notices, insurance, keys, Land Registry. Each is treated as equally important.",risk:"Cannot tell which item matters most today. Misses what is not on the list.",grow:"Shadowed first attendances; narrate what you notice aloud and compare with the senior’s account."},
+    {n:"Stage 2",t:"Advanced beginner",q:"Starts to recognise recurring features of situations.",rule:75,sit:30,see:"Familiar signs: the signs of occupation, the tone of an evasive borrower, the agent who will not commit.",risk:"Recognises features but not their weight. Overreacts to vivid cues.",grow:"Decision games with feedback; a mentor who explains why one cue outranks another."},
+    {n:"Stage 3",t:"Competent",q:"Chooses a plan and feels responsible for it.",rule:55,sit:55,see:"A goal and a plan, and the facts that bear on it. Deliberate prioritisation.",risk:"Commitment to the plan becomes a strip-map. Emotional investment makes it hard to abandon.",grow:"Pre-mortems; the fortnightly rewrite of the picture of the case; explicit ‘what would prove me wrong’."},
+    {n:"Stage 4",t:"Proficient",q:"Sees what is happening; still decides what to do analytically.",rule:30,sit:78,see:"The situation as a whole: “this is a stall, not a failure”, “this occupier is a tenant in all but paperwork”.",risk:"Sound picture, slower action. Deliberation where recognition would serve.",grow:"Mission-type instructions that let recognised actions run; critical decision interviews to surface the picture."},
+    {n:"Stage 5",t:"Expert",q:"Sees what is happening and what to do, at once.",rule:10,sit:95,see:"The situation solicits the move. The first option considered is usually workable, then simulated and adapted.",risk:"In low-validity zones (exit price, novel law, new lender types) the same fluency can mislead.",grow:"Calibration: record forecasts where feedback is slow; teach, because explaining reveals what has become invisible."}
+  ];
+  var skR=$("skillRungs"), skD=$("skillDetail");
+  function selSk(i){
+    var r=SK[i];
+    Array.prototype.forEach.call(skR.children,function(b,j){b.setAttribute("aria-selected",String(j===i));b.tabIndex=j===i?0:-1;});
+    skD.innerHTML='<span class="caps">'+r.n+'</span><h3>'+esc(r.t)+'</h3><p class="q">'+esc(r.q)+'</p><div class="meters"><div class="meter"><div class="lab">Rule reliance</div><div class="bar"><i style="width:'+r.rule+'%"></i></div></div><div class="meter"><div class="lab">Situational recognition</div><div class="bar"><i style="width:'+r.sit+'%"></i></div></div></div><dl class="dl2"><dt>What they see</dt><dd>'+esc(r.see)+'</dd><dt>The risk</dt><dd>'+esc(r.risk)+'</dd><dt>How to grow it</dt><dd>'+esc(r.grow)+'</dd></dl>';
+  }
+  SK.forEach(function(r,i){
+    var b=document.createElement("button");b.className="rung";b.type="button";b.setAttribute("role","option");
+    b.innerHTML='<span class="rn">'+r.n+'</span><span class="rt">'+esc(r.t)+'</span>';
+    b.addEventListener("click",function(){selSk(i);});
+    b.addEventListener("keydown",function(e){
+      if(e.key==="ArrowUp"||e.key==="ArrowRight"){e.preventDefault();var k=Math.min(SK.length-1,i+1);selSk(k);skR.children[k].focus();}
+      if(e.key==="ArrowDown"||e.key==="ArrowLeft"){e.preventDefault();var k2=Math.max(0,i-1);selSk(k2);skR.children[k2].focus();}
+    });
+    skR.appendChild(b);
+  });
+  selSk(2);
+
+  /* ---------- NDM scorer ---------- */
+  var NDM=[
+    ["Ill-structured problem","No agreed definition of what the problem is"],
+    ["Uncertain, dynamic environment","Occupation, market or site keep changing"],
+    ["Shifting or competing goals","Lender, borrower, occupiers and court pull different ways"],
+    ["Action–feedback loops","Each move changes the situation you are reading"],
+    ["Time stress","Deadlines, arrears, insurance, security risk"],
+    ["High stakes","Large exposure, homes, reputation, litigation risk"],
+    ["Multiple players","Many parties whose actions interact"],
+    ["Organisational goals and norms","Lender policy, credit committee, regulator, practice rules"]
+  ];
+  var nRows=$("ndmRows"), nVals=NDM.map(function(){return 0;});
+  NDM.forEach(function(f,i){
+    var row=document.createElement("div");row.className="srow";
+    row.innerHTML='<div><div class="st">'+esc(f[0])+'</div><div class="sh">'+esc(f[1])+'</div></div><input type="range" min="0" max="3" step="1" value="0" aria-label="'+esc(f[0])+'"><output>0</output>';
+    var inp=row.querySelector("input"), out=row.querySelector("output");
+    inp.addEventListener("input",function(){nVals[i]=+inp.value;out.textContent=inp.value;scoreNdm();});
+    nRows.appendChild(row);
+  });
+  function scoreNdm(){
+    if(window.__ndmRadar)window.__ndmRadar(nVals);
+    var s=nVals.reduce(function(a,b){return a+b;},0);
+    $("ndmScore").innerHTML=s+'<small> / 24</small>';
+    var b=$("ndmBand"), t=$("ndmText");
+    if(s===0){b.className="band";b.textContent="Move the sliders";t.textContent="Each feature scores 0 (absent) to 3 (dominant).";return;}
+    if(s<=8){b.className="band b0";b.textContent="Analytical ground";t.textContent="Procedures, checklists and standard sequencing will carry most of the load. Use recognition to spot anything that does not fit the standard case.";}
+    else if(s<=16){b.className="band b1";b.textContent="Mixed ground";t.textContent="Trust recognition for routine field judgments; build deliberate checks for the low-validity ones (exit price, novel law, unfamiliar lender). Fortnightly picture rewrites.";}
+    else{b.className="band b2";b.textContent="Fully naturalistic";t.textContent="Lead with your most experienced receiver, give a mission-type instruction with clear limits, shorten feedback cycles to days, and schedule reflection points so the picture is rebuilt, not just updated.";}
+  }
+
+  /* ---------- Seven moments ---------- */
+  var MOM=[
+    {t:"The instruction",lived:"The call, the email, the first read of the file. A picture forms before you have seen anything, and it already feels true.",body:["The receiver’s orientation begins here, and it begins contaminated: by the lender’s framing, the valuer’s description, the borrower’s last letter and the receiver’s own memory of similar cases. Increasingly the observation window opens before appointment, when lenders retain receivers to advise.","The first physical object of the receivership is the paper itself: the charge, the demand, the deed of appointment. The courts take a strict view of validity, so this is the first thing to observe properly."],boyd:"Orientation forming under the pressure of someone else’s picture. Auftragstaktik starts here: what is the lender’s mission, and what are its limits?",map:"A provisional map, explicitly marked provisional: three possible endings, the parties who could bring each about, and the questions only the site can answer.",trap:"Accepting the file’s concept of the case as the case."},
+    {t:"The threshold",lived:"Standing at the gate. The keys that do not fit. The light on upstairs. The smell of a building that has been empty, or has not.",body:["This is the most phenomenological moment of the appointment and the one most often rushed. The body takes in more than the notebook: signs of use, of neglect, of recent entry; the street’s attention; the neighbours watching.","Heidegger’s breakdown becomes literal. The asset that was equipment for the borrower now shows itself as a thing with problems. Name which are broken, which are missing and which are in the way."],boyd:"Observation at its richest, fed by new information. Fingerspitzengefühl is either present here or absent.",map:"Write first-attendance notes before re-reading the file: what was expected, what was found, what surprised you.",trap:"Seeing only what the instruction told you to look for."},
+    {t:"The remap",lived:"Back at the desk, the file looks different. The building in your head and the building in the valuation are no longer the same place.",body:["This is the moment place cells remap: a new environment, a new map. The disciplined receiver does not edit the lender’s picture; he draws a new one from the site, then reconciles it with the documents.","Draw the asset in Lynch’s elements. Map what it affords to every party. Write the case concept in one sentence and test it against everything seen at the threshold."],boyd:"Analysis and synthesis: destructive deduction of the file’s concept, creative induction of a new one.",map:"The first full map: Lynch elements, affordances by party, dependencies with other assets or loans, and the single event that would tip the case.",trap:"Adding site facts to the old picture instead of redrawing it."},
+    {t:"The contact",lived:"The first conversation with the borrower, the occupiers, the contractor. Each arrives with a story and a stake, and you are the stranger with the paper.",body:["The moral plane opens. The receiver is the mortgagor’s agent appointed by the lender, an awkward position that holds only if it is held honestly. Everything said now will be remembered, and repeated.","Occupiers are not obstacles; they are parties with payoffs. Some are tenants with rights; some are vulnerable; some are not what they claim. Respectful interaction is not softness; it is what keeps information flowing."],boyd:"The moral-mental contest. Build Einheit with the lender’s team; protect integrity with everyone else. Restore interaction around an isolated asset.",map:"A party map: each party’s account in their own words (Eden and Ackermann), what they want, what they can do, what would make cooperation their best option.",trap:"Treating the borrower’s narrative as fact, or treating everyone as an adversary."},
+    {t:"The tempo",lived:"Weeks in. Several things are moving at once, and the case either feels as if you are ahead of it or as if it is ahead of you.",body:["Tempo is not haste. It is changing the situation faster than it can surprise you, because the next move was prepared before it was needed. Reversible moves first: securing, insuring, collecting, verifying, quietly testing the market.","This is where implicit guidance and control pays. A team that shares the picture and trusts the mission acts without re-asking. A team that needs sign-off for each step falls behind."],boyd:"The loop as a whole: observe, orient, decide, act, with feedback tighter than the case’s rate of change. Cheng and ch’i: the formal process run well, and the unexpected lawful move.",map:"The fortnightly picture of the case, rewritten not appended, sent to the lender with the next three moves marked reversible or not.",trap:"Speed without orientation: lots of activity, no change in the situation."},
+    {t:"The exit",lived:"The offers are in, or the works are nearly done. Everyone wants a date. This is the moment the case becomes irreversible.",body:["The law is most demanding here. The receiver may choose when to sell, but must take reasonable care to obtain the true market value at that moment. That is a legal duty and a perceptual one: the market has to be read as carefully as the site was.","Exit price is a low-validity judgment for intuition. Even the most experienced receiver should treat their sense of value as a hypothesis, tested by valuation, marketing and competition."],boyd:"Decision as hypothesis, tested hard before committing. Schwerpunkt: the whole case now serves one focus.",map:"The buyer field: who the asset affords most to, how they buy, how fast, and what would make them bid.",trap:"Letting the lender’s impatience or the receiver’s fatigue decide the timing."},
+    {t:"The release",lived:"The completion, the final account, the file closed. What remains is what you learned, if you take the trouble to find it.",body:["Reflection-on-action is the most neglected moment in receivership. Without it, a thousand appointments become one appointment repeated a thousand times.","Ask Klein’s questions: what did you notice, when did the picture change, what would a novice have missed, what did you get wrong? Record the forecast you made at the start and compare it with the outcome."],boyd:"Destruction and creation of the practitioner’s own orientation. The loop closes at a higher level.",map:"Add the case to the pattern library: the drawn map, the surprises, the outcome, the lesson in one sentence.",trap:"Moving straight to the next appointment with the same orientation."}
+  ];
+  var mT=$("momentTabs"), mB=$("momentBody"), mCur=0;
+  MOM.forEach(function(m,i){
+    var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");
+    b.innerHTML='<span class="sn2">'+(i+1)+'</span>'+esc(m.t);
+    b.addEventListener("click",function(){selMom(i);});mT.appendChild(b);
+  });
+  function selMom(i){
+    mCur=i;var m=MOM[i];
+    Array.prototype.forEach.call(mT.children,function(b,j){b.setAttribute("aria-selected",String(j===i));});
+    mB.innerHTML='<div><span class="caps">Moment '+(i+1)+' of 7 · what is lived</span><p class="lived" style="margin-top:10px">'+esc(m.lived)+'</p><div class="body">'+m.body.map(function(p){return "<p>"+esc(p)+"</p>";}).join("")+'</div></div><div class="game"><h3>'+esc(m.t)+'</h3><dl><dt>Boyd’s reading</dt><dd>'+esc(m.boyd)+'</dd><dt>The map to build</dt><dd>'+esc(m.map)+'</dd><dt>The trap</dt><dd>'+esc(m.trap)+'</dd></dl></div>';
+    if(window.__arcSel)window.__arcSel(i);
+    $("momPrev").disabled=i===0;$("momNext").disabled=i===MOM.length-1;
+    $("momPrev").style.opacity=i===0?.4:1;$("momNext").style.opacity=i===MOM.length-1?.4:1;
+  }
+  window.__selMom=function(i){selMom(i);};
+  $("momPrev").addEventListener("click",function(){if(mCur>0)selMom(mCur-1);});
+  $("momNext").addEventListener("click",function(){if(mCur<MOM.length-1)selMom(mCur+1);});
+  selMom(0);
+
+  /* ---------- Climate radar ---------- */
+  var CL=[
+    ["Einheit","Trust and shared picture across lender, receiver and agents","Build it deliberately: a joint first-week review, one shared picture of the case, and candour when things go wrong."],
+    ["Fingerspitzengefühl","Fingertip feel for the asset and the parties","Grow it through shadowed attendances, decision games and critical decision interviews after difficult cases."],
+    ["Auftragstaktik","Mission-type instruction: what and why, with limits","Rewrite the instruction letter as a mission: objective, limits, reporting rhythm, and the decisions the receiver may take alone."],
+    ["Schwerpunkt","One stated focus that every action serves","Name one focus per case in a sentence and test every proposed action against it."],
+    ["Behendigkeit","Agility to switch routes without losing weeks","Pre-agree the triggers for changing route and the authority to do it, so a switch is a decision, not a negotiation."]
+  ];
+  var cRows=$("climRows"), cVals=CL.map(function(){return 3;}), radar=$("radar");
+  CL.forEach(function(c,i){
+    var row=document.createElement("div");row.className="srow";
+    row.innerHTML='<div><div class="st">'+esc(c[0])+'</div><div class="sh">'+esc(c[1])+'</div></div><input type="range" min="1" max="5" step="1" value="3" aria-label="'+esc(c[0])+'"><output>3</output>';
+    var inp=row.querySelector("input"), out=row.querySelector("output");
+    inp.addEventListener("input",function(){cVals[i]=+inp.value;out.textContent=inp.value;drawRadar();});
+    cRows.appendChild(row);
+  });
+  function drawRadar(){
+    while(radar.firstChild)radar.removeChild(radar.firstChild);
+    var cx=210,cy=205,R=140,n=CL.length;
+    function pt(i,v){var a=-Math.PI/2+i*2*Math.PI/n;return [cx+Math.cos(a)*R*v/5,cy+Math.sin(a)*R*v/5];}
+    for(var lv=1;lv<=5;lv++){var p=[];for(var i=0;i<n;i++)p.push(pt(i,lv).join(","));svgEl(radar,"polygon",{points:p.join(" "),fill:"none",stroke:"#2A4262","stroke-width":1});}
+    for(var j=0;j<n;j++){var e=pt(j,5);svgEl(radar,"line",{x1:cx,y1:cy,x2:e[0],y2:e[1],stroke:"#2A4262"});
+      var l=pt(j,6.05);svgEl(radar,"text",{x:l[0],y:l[1]+4,"text-anchor":"middle","font-size":13,fill:"#EEE8DC","font-family":"IBM Plex Sans, Arial, sans-serif"},CL[j][0]);}
+    var pp=cVals.map(function(v,i){return pt(i,v).join(",");}).join(" ");
+    svgEl(radar,"polygon",{points:pp,fill:"rgba(210,174,99,.22)",stroke:"#D2AE63","stroke-width":2});
+    cVals.forEach(function(v,i){var q=pt(i,v);var c=svgEl(radar,"circle",{cx:q[0],cy:q[1],r:9,fill:"#D2AE63",stroke:"#0C1726","stroke-width":2,"class":"drag",tabindex:"0","aria-label":CL[i][0]+" "+v+" of 5"});
+      svgEl(c,"title",{},CL[i][0]+": drag along the axis");
+      c.addEventListener("pointerdown",function(e){e.preventDefault();radarDrag=i;radar.setPointerCapture&&radar.setPointerCapture(e.pointerId);});
+      c.addEventListener("keydown",function(e){if(e.key==="ArrowUp"||e.key==="ArrowRight"){e.preventDefault();setClim(i,Math.min(5,cVals[i]+1));}if(e.key==="ArrowDown"||e.key==="ArrowLeft"){e.preventDefault();setClim(i,Math.max(1,cVals[i]-1));}});
+    });
+    var min=Math.min.apply(null,cVals), weak=[];cVals.forEach(function(v,i){if(v===min)weak.push(i);});
+    var avg=cVals.reduce(function(a,b){return a+b;},0)/n;
+    var txt='<b style="color:var(--bone)">Average '+avg.toFixed(1)+' of 5.</b> ';
+    if(min>=4)txt+="A strong climate. Protect it as volume rises; it is the first thing pressure erodes.";
+    else if(weak.length===n)txt+="An even profile. Start with Einheit, which Boyd treated as the precondition for everything fast: "+CL[0][2].charAt(0).toLowerCase()+CL[0][2].slice(1);
+    else txt+="Weakest: "+weak.map(function(i){return CL[i][0];}).join(", ")+". "+CL[weak[0]][2];
+    $("climRead").innerHTML=txt;
+  }
+  var radarDrag=-1;
+  function setClim(i,v){if(cVals[i]===v)return;cVals[i]=v;var row=cRows.children[i];row.querySelector("input").value=v;row.querySelector("output").textContent=v;drawRadar();var c=radar.querySelectorAll("circle.drag")[i];if(c&&document.activeElement!==c&&radarDrag<0){}}
+  radar.addEventListener("pointermove",function(e){
+    if(radarDrag<0)return;
+    var pt2=radar.createSVGPoint();pt2.x=e.clientX;pt2.y=e.clientY;var p=pt2.matrixTransform(radar.getScreenCTM().inverse());
+    var a=-Math.PI/2+radarDrag*2*Math.PI/CL.length, proj=((p.x-210)*Math.cos(a)+(p.y-205)*Math.sin(a))/140*5;
+    setClim(radarDrag,Math.max(1,Math.min(5,Math.round(proj))));
+  });
+  ["pointerup","pointerleave","pointercancel"].forEach(function(ev){radar.addEventListener(ev,function(){radarDrag=-1;});});
+  drawRadar();
+
+  /* ---------- Orientation check ---------- */
+  var OQ=[
+    ["cul","Do you know what this lender counts as success, and its real timetable?","Not the instruction’s wording: the credit committee’s actual concern."],
+    ["cul","Do you know how this market trades this asset type: who buys, how, how fast?","Local norms are part of the terrain."],
+    ["gen","Have you named your own default (avoid conflict, or force pace) and checked it against what this case needs?","Temperament chooses routes if you let it."],
+    ["exp","Can you name the previous case this most resembles, and one way it differs?","Precedent is a library, not a template."],
+    ["exp","Is the key judgment here one you have made many times with quick feedback?","If not, treat intuition as a hypothesis."],
+    ["nwi","Have you attended and recorded first impressions before re-reading the file?","Remap from the site, not from the valuation."],
+    ["nwi","Do you know who is in occupation, and on what basis?","Occupation is the commonest blind spot."],
+    ["nwi","Have you logged at least one surprise and what it changed?","No surprises usually means no attention."],
+    ["ans","Can you state three possible endings and who could bring each about?","One ending means a strip-map."],
+    ["ans","Have you mapped what the asset affords to each party?","Borrower, occupiers, neighbours, buyers."],
+    ["igc","Does your instruction state the mission and limits clearly enough to act without re-asking?","Implicit guidance needs an explicit mission."],
+    ["igc","Is the appointment’s validity confirmed and are the team’s hand-offs agreed?","A broken deed or a silent team undoes everything."]
+  ];
+  var EL={cul:"Cultural traditions",gen:"Temperament",exp:"Previous experience",nwi:"New information",ans:"Analysis & synthesis",igc:"Guidance & control"};
+  var oq=$("oq"), oVals=OQ.map(function(){return null;});
+  OQ.forEach(function(q,i){
+    var row=document.createElement("div");row.className="qrow";
+    row.innerHTML='<div class="qn">'+(i+1)+'</div><div><div class="qt">'+esc(q[1])+'</div><div class="qh">'+esc(EL[q[0]])+' · '+esc(q[2])+'</div></div><div class="seg" role="group" aria-label="Answer for question '+(i+1)+'"><button type="button" data-v="0" aria-pressed="false">Clear</button><button type="button" data-v="1" aria-pressed="false">Unclear</button><button type="button" data-v="2" aria-pressed="false">Concern</button></div>';
+    Array.prototype.forEach.call(row.querySelectorAll("button"),function(b){
+      b.addEventListener("click",function(){
+        oVals[i]=+b.dataset.v;
+        Array.prototype.forEach.call(row.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",String(x===b));});
+        scoreO();
+      });
+    });
+    oq.appendChild(row);
+  });
+  function scoreO(){
+    var n=0,s=0,by={};
+    oVals.forEach(function(v,i){if(v!==null){n++;s+=v;by[OQ[i][0]]=(by[OQ[i][0]]||0)+v;}});
+    $("oScore").innerHTML=s+'<small> / 24</small>';$("oCount").textContent=n+" of 12 answered";
+    var b=$("oBand"),t=$("oText");
+    if(n===0){b.className="band";b.textContent="Not yet answered";t.textContent="Mark each question Clear, Unclear or Concern. Unclear counts 1, Concern counts 2.";$("oWeak").textContent="";return;}
+    if(s<=6){b.className="band b0";b.textContent="Well oriented";t.textContent="The picture is sound enough to act on. Keep feedback tight and watch for surprises.";}
+    else if(s<=14){b.className="band b1";b.textContent="Partly oriented";t.textContent="Act on reversible moves only, and rebuild the weak areas of the picture before anything irreversible.";}
+    else{b.className="band b2";b.textContent="Disoriented";t.textContent="Stop at securing and verifying. Return to the threshold and remap before deciding any route.";}
+    var worst=null,wv=0;for(var k in by){if(by[k]>wv){wv=by[k];worst=k;}}
+    $("oWeak").textContent=worst?"Weakest element: "+EL[worst]:"";
+  }
+  $("oReset").addEventListener("click",function(){oVals=oVals.map(function(){return null;});Array.prototype.forEach.call(oq.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed","false");});scoreO();});
+
+  /* ---------- Situations ---------- */
+  var SIT=[
+    {t:"The stalled scheme",brief:"A part-built block of 24 flats. The contractor has gone, warranty cover is uncertain, the site is open at one corner and a bridging lender’s facility is long past term.",moves:[["Confirm validity, insurance and site safety","The deed, the insurers’ position on an unoccupied construction site, and immediate hazards.","rev"],["Secure the site and take an inventory","New security, photographs, materials on site, plant, what has gone missing.","rev"],["Meet the contractor and subcontractors","Liens, retentions, unpaid packages, who holds drawings and keys. Each is a party with payoffs.","part"],["Cost to complete, warranty review, quiet market test","What it costs to finish, whether it can be warranted, and what buyers would pay as is and complete.","rev"],["Choose the route","Sell as is, complete and sell, or part-complete with a forward sale. This is the point of commitment.","man"],["Run it with dated milestones","Fortnightly picture to the lender; triggers agreed for changing route.","part"]],
+     read:{sch:"Decide completion versus sale, and let everything serve that decision.",br:"Conspicuous (the build is broken) and obtrusive (contractor, records and warranties missing).",cc:"Cheng: a formal tender. Ch’i: an early approach to a local developer who knows the subcontractors and can mobilise fast.",trap:"A strip-map to “finish it” because the lender anchored on gross development value."}},
+    {t:"The parade with a story",brief:"A parade of five shops with flats above and a yard behind. The borrower says the flats pay him in cash, the anchor pharmacy is “on side”, and the yard is “empty”.",moves:[["Serve notices and attend at different times of day","Occupation, use of the yard at night, who comes and goes.","rev"],["Occupation survey of every flat","Who lives there, on what basis, whether deposits were protected, who is vulnerable. Handle the current residential regime with care.","rev"],["Redirect rents and open an account trail","Every payer named, every payment traced.","part"],["Call on the anchor occupier early","Lease terms, intentions, relationship with the borrower. The landmark shapes how buyers read the parade.","rev"],["Engage the borrower with dated evidence requests","Separate a plan from a story by asking for documents with dates.","rev"],["Decide hold-and-collect or tenanted sale","In lots or as one; informed by the district-by-district pricing.","man"]],
+     read:{sch:"Make the income visible and lawful; everything else follows.",br:"Obstinate: occupiers and a borrower with a narrative stand between the receiver and the income.",cc:"Cheng: notices and rent demands. Ch’i: the anchor tenant conversation in week one.",trap:"Accepting the borrower’s account, or treating residential occupiers as obstacles rather than parties with rights."}},
+    {t:"The quiet portfolio",brief:"Fourteen buy-to-let houses across three towns. A managing agent holds deposits and records, four houses are void, two have disrepair complaints, and the lender wants a plan within a month.",moves:[["Portfolio triage map","Lynch at town scale: which houses, which districts, which need action this week.","rev"],["Take control of the managing agent relationship","Records, deposits, client account, maintenance log.","part"],["Inspect every house, worst first","Disrepair, safety certificates, void security.","rev"],["Stabilise income and compliance","Rent collection, certificates, repairs that cannot wait.","part"],["Sequence the disposals","Tenanted lots or vacant, auction or private treaty, in an order that does not flood one local market.","man"],["Weekly hand-off rhythm","Receiver, agent and lender on one picture; the portfolio thinks as a team.","rev"]],
+     read:{sch:"Fourteen assets, one picture: stabilise, then sequence.",br:"Mostly obtrusive (records and control missing) with pockets of conspicuous disrepair.",cc:"Cheng: standard agent instructions. Ch’i: offering a block of tenanted houses to a local portfolio landlord who already manages nearby.",trap:"Treating fourteen cases as one, or one portfolio as fourteen unrelated cases."}}
+  ];
+  var TAG={rev:"Reversible",part:"Partly reversible",man:"Committed"};
+  var sT=$("sitTabs"), sB=$("sitBody");
+  SIT.forEach(function(s,i){var b=document.createElement("button");b.className="tab";b.type="button";b.setAttribute("role","tab");b.textContent=s.t;b.addEventListener("click",function(){selSit(i);});sT.appendChild(b);});
+  function selSit(i){
+    var s=SIT[i];
+    Array.prototype.forEach.call(sT.children,function(b,j){b.setAttribute("aria-selected",String(j===i));});
+    sB.innerHTML='<div><p class="brief">'+esc(s.brief)+'</p><ol class="moves">'+s.moves.map(function(m){return '<li><div><div class="mt">'+esc(m[0])+'<span class="tag '+m[2]+'">'+TAG[m[2]]+'</span></div><div class="md">'+esc(m[1])+'</div></div></li>';}).join("")+'</ol></div><div class="game"><h3>The Boyd read</h3><dl><dt>Schwerpunkt</dt><dd>'+esc(s.read.sch)+'</dd><dt>Breakdown mode</dt><dd>'+esc(s.read.br)+'</dd><dt>Cheng and ch’i</dt><dd>'+esc(s.read.cc)+'</dd><dt>The trap</dt><dd>'+esc(s.read.trap)+'</dd></dl></div>';
+  }
+  selSit(0);
+
+  /* ---------- Destruction & creation cycle ---------- */
+  var CY=[
+    {k:"Structure",t:"The working concept",d:"A practitioner’s rule of thumb, built over years: “a borrower who stays involved is a delay risk; move fast to control and keep him out of it.” It has worked often enough to feel like knowledge."},
+    {k:"Unstructure · destructive deduction",t:"Breaking it apart",d:"Several cases do not fit. Where borrowers stayed involved on clear terms, keys, records, warranties and buyer leads arrived faster and prices were better. Taken apart, the rule turns out to bundle four separate things: control, information, cooperation and timing."},
+    {k:"Restructure · creative induction",t:"Building the snowmobile",d:"The pieces are recombined with parts from elsewhere: game theory (make cooperation the borrower’s best option), Gibson (what the borrower affords the receiver: knowledge of the asset) and mission command (limits set in writing). New concept: “keep control, and treat cooperation as an information asset with a price.”"},
+    {k:"Test",t:"Back into the field",d:"The new concept is applied to the next cases, with the forecast recorded at the start and checked at completion. It will work for a while. Then the market, the law or a new kind of borrower will begin to wear it down, and the cycle turns again."}
+  ];
+  var cyS=$("cycleSvg"), cyI=0;
+  function drawCy(){
+    while(cyS.firstChild)cyS.removeChild(cyS.firstChild);
+    svgEl(cyS,"circle",{cx:150,cy:150,r:110,fill:"none",stroke:"#2A4262","stroke-width":2});
+    var a0=-Math.PI/2+(cyI-1)*Math.PI/2+0.25,a1=-Math.PI/2+cyI*Math.PI/2-0.25;
+    if(cyI>0){var dm=svgEl(cyS,"defs",{});var mk=svgEl(dm,"marker",{id:"cyA",viewBox:"0 0 10 10",refX:"8",refY:"5",markerWidth:"6",markerHeight:"6",orient:"auto"});svgEl(mk,"path",{d:"M0 0 L10 5 L0 10 z",fill:"#D2AE63"});
+      svgEl(cyS,"path",{d:"M"+(150+Math.cos(a0)*110)+" "+(150+Math.sin(a0)*110)+" A110 110 0 0 1 "+(150+Math.cos(a1)*110)+" "+(150+Math.sin(a1)*110),fill:"none",stroke:"#D2AE63","stroke-width":3,"marker-end":"url(#cyA)"});}
+    var lab=["Structure","Unstructure","Restructure","Test"];
+    for(var i=0;i<4;i++){
+      var a=-Math.PI/2+i*Math.PI/2,x=150+Math.cos(a)*110,y=150+Math.sin(a)*110,on=i===cyI;
+      (function(k){var c=svgEl(cyS,"circle",{cx:x,cy:y,r:on?16:12,fill:on?"#D2AE63":"#0C1726",stroke:on?"#D2AE63":"#8EA0B6","stroke-width":2,style:"cursor:pointer",tabindex:"0","aria-label":lab[k]});svgEl(c,"title",{},lab[k]);c.addEventListener("click",function(){cyI=k;drawCy();});c.addEventListener("keydown",function(e){if(e.key==="Enter"){cyI=k;drawCy();}});})(i);
+      var tx=150+Math.cos(a)*68,ty=150+Math.sin(a)*68+4;
+      svgEl(cyS,"text",{x:tx,y:ty,"text-anchor":"middle","font-size":13,fill:on?"#EEE8DC":"#8EA0B6","font-family":"IBM Plex Sans, Arial, sans-serif"},lab[i]);
+    }
+    svgEl(cyS,"text",{x:150,y:156,"text-anchor":"middle","font-size":20,fill:"#D2AE63","font-family":"Cormorant Garamond, Georgia, serif","font-style":"italic"},"entropy");
+    var c=CY[cyI];$("cyK").textContent=c.k;$("cyT").textContent=c.t;$("cyD").textContent=c.d;
+  }
+  $("cyNext").addEventListener("click",function(){cyI=(cyI+1)%4;drawCy();});
+  drawCy();
+
+
+  /* =================== V2 UPGRADES =================== */
+
+  /* ---------- OODA trace modes and walk ---------- */
+  (function(){
+    var MODES={all:null,ff:["env","obs","ori","dec","act"],gc:["ori","igc","obs","act","cul","gen","exp","nwi","ans"],fb:["dec","act","fb","obs","ori"]};
+    var chips=document.querySelectorAll('.oodabox .chip[data-mode]'), playBtn=$("oodaPlay"), timer=null;
+    function setMode(m){
+      Array.prototype.forEach.call(chips,function(c){c.setAttribute("aria-pressed",String(c.dataset.mode===m));});
+      Array.prototype.forEach.call(oodaSvg.querySelectorAll(".lnk"),function(l){l.classList.toggle("dim",m!=="all"&&l.getAttribute("data-k")!==m);});
+      for(var k in oodaNodes)oodaNodes[k].classList.toggle("dim",!!MODES[m]&&MODES[m].indexOf(k)<0);
+      var first={ff:"obs",gc:"igc",fb:"fb"}[m];if(first)selOoda(first);
+    }
+    Array.prototype.forEach.call(chips,function(c){c.addEventListener("click",function(){stop();setMode(c.dataset.mode);});});
+    var SEQ=["env","obs","ori","cul","gen","exp","nwi","ans","dec","act","fb","igc"];
+    function stop(){if(timer){clearInterval(timer);timer=null;}playBtn.setAttribute("aria-pressed","false");playBtn.textContent="▶ Walk the loop";for(var k in oodaNodes)oodaNodes[k].classList.remove("pulse");}
+    playBtn.addEventListener("click",function(){
+      if(timer){stop();return;}
+      setMode("all");var i=0;playBtn.setAttribute("aria-pressed","true");playBtn.textContent="■ Stop";
+      function step(){for(var k in oodaNodes)oodaNodes[k].classList.remove("pulse");var id=SEQ[i];oodaNodes[id].classList.add("pulse");selOoda(id);i++;if(i>=SEQ.length)i=0;}
+      step();timer=setInterval(step,2600);
+    });
+  })();
+
+  /* ---------- Lynch: read the asset as a party ---------- */
+  (function(){
+    var L=window.__LY, lens=$("lynchLens");
+    var PARTY={
+      borrower:{t:"The borrower",aff:{paths:"The rent paths still lead to him if occupiers are not told otherwise.",nodes:"Keys to the yard gate and side door; knowledge of the meters and the managing agent.",landmarks:"A relationship with the anchor occupier he may try to trade on.",districts:"A sense of the parade as one business, not three districts."},q:"What does the borrower still control, and what would make handing it over his best option?"},
+      occupiers:{t:"The occupiers",aff:{districts:"Homes in the upper parts; livelihoods in the retail frontage.",paths:"The side door and stair; the routes they use daily; the rent they pay, and to whom.",nodes:"The meter cupboard and the side door are their infrastructure, not the receiver’s."},q:"Who lives and trades here, on what basis, and who is vulnerable?"},
+      neighbour:{t:"The neighbour developer",aff:{edges:"The title edge and the railway margin: a possible ransom strip or a boundary dispute.",landmarks:"His new development changes how the whole street is read.",districts:"The rear yard as land for his next phase."},q:"Is the neighbour a threat to the security, or its best buyer?"},
+      vans:{t:"The van operator",aff:{districts:"The yard as free overnight parking.",nodes:"The yard gate, whose key he may already hold.",paths:"The rear service lane as his access."},q:"Is the yard being used, and does that use create rights, risk or rent?"},
+      buyer:{t:"The likely buyer",aff:{landmarks:"The anchor pharmacy is the covenant he is really buying.",districts:"Three districts priced differently: retail yield, residential value, yard development potential.",edges:"A clean title edge, or a discount for every mismatch.",paths:"Footfall on the high street."},q:"How will the market read this parade, and what would make it bid?"}
+    };
+    var keys=["none","borrower","occupiers","neighbour","vans","buyer"], names={none:"Lynch elements"};
+    keys.forEach(function(k){var b=document.createElement("button");b.className="chip";b.type="button";b.dataset.p=k;b.textContent=k==="none"?"Lynch elements":PARTY[k].t.replace("The ","");b.setAttribute("aria-pressed",String(k==="none"));b.addEventListener("click",function(){setLens(k);});lens.appendChild(b);});
+    function setLens(k){
+      Array.prototype.forEach.call(lens.querySelectorAll(".chip"),function(c){c.setAttribute("aria-pressed",String(c.dataset.p===k));});
+      if(k==="none"){L.sel("paths");return;}
+      var P=PARTY[k];
+      Array.prototype.forEach.call(L.btns.children,function(b){b.setAttribute("aria-selected","false");});
+      L.shapes.forEach(function(e){
+        var on=!!P.aff[e.getAttribute("data-el")];
+        if(e.tagName==="text"){e.setAttribute("fill",on?"#D2AE63":"#8EA0B6");e.setAttribute("font-weight",on?"600":"400");}
+        else{if(!e.dataset.os){e.dataset.os=e.getAttribute("stroke");e.dataset.ow=e.getAttribute("stroke-width");}e.setAttribute("stroke",on?"#D2AE63":e.dataset.os);e.setAttribute("stroke-width",on?"3":e.dataset.ow);e.style.opacity=on?"1":"0.35";}
+      });
+      var h='<span class="caps">Gibson’s affordances · read as</span><h3>'+esc(P.t)+'</h3><p class="q">'+esc(P.q)+'</p><dl>';
+      ["paths","edges","districts","nodes","landmarks"].forEach(function(e){if(P.aff[e])h+='<dt>'+L.data[e].t+'</dt><dd>'+esc(P.aff[e])+'</dd>';});
+      L.panel.innerHTML=h+'</dl>';
+    }
+  })();
+
+  /* ---------- Distributed cognition network ---------- */
+  (function(){
+    var svg=$("net"), panel=$("netPanel"), layersEl=$("netLayers"), legend=$("netLegend");
+    var N=[
+      {id:"rec",t:"Receiver",x:280,y:235,r:40,d:"The node through which most of the picture passes, but never all of it. The receiver’s job is less to know everything than to keep the system’s picture current."},
+      {id:"len",t:"Lender",x:280,y:60,r:30,d:"Sets the mission and its limits; holds the credit view and the timetable. Often knows things about the borrower the file does not say."},
+      {id:"sol",t:"Solicitor",x:470,y:110,r:28,d:"Holds the legal picture: validity, notices, occupiers’ rights, litigation risk."},
+      {id:"agt",t:"Selling agent",x:500,y:270,r:28,d:"Holds the market picture: buyers, pricing, timing. Feedback on exit price arrives through this node."},
+      {id:"man",t:"Managing agent",x:440,y:410,r:28,d:"Holds the daily picture: rents, repairs, complaints, compliance. The node most likely to notice change first."},
+      {id:"sec",t:"Security",x:280,y:440,r:26,d:"Eyes on site out of hours. Sees re-entry, stripping, unexpected use."},
+      {id:"occ",t:"Occupiers",x:110,y:400,r:30,d:"Live in or trade from the asset. Their accounts are evidence; their rights are constraints; their cooperation is value."},
+      {id:"bor",t:"Borrower",x:70,y:240,r:30,d:"Knows the asset best and has the most reason to shade the story. Information and keys flow from here, or are withheld."},
+      {id:"val",t:"Valuer",x:100,y:95,r:26,d:"An independent reading of value that tests the receiver’s and the agent’s instincts in a low-validity zone."}
+    ];
+    var E=[
+      ["len","rec","info","Instruction, credit view, approvals"],["rec","len","info","Fortnightly picture of the case"],["len","rec","auth","Appointment and mission limits"],["len","rec","money","Funding of costs, if needed"],
+      ["rec","sol","info","Facts for notices and advice"],["sol","rec","auth","Legal advice that bounds action"],
+      ["rec","agt","auth","Instruction to market"],["agt","rec","info","Buyer feedback, offers"],
+      ["rec","man","auth","Management instruction"],["man","rec","info","Rents, repairs, complaints"],["occ","man","money","Rent and service charge"],["man","rec","money","Net income to the receivership account"],
+      ["sec","rec","info","Site incidents"],["rec","sec","auth","Security brief"],
+      ["occ","rec","info","Accounts of occupation"],["rec","occ","auth","Notices and rent redirection"],
+      ["bor","rec","info","Keys, records, history (or not)"],["rec","bor","info","Requests for evidence"],
+      ["val","rec","info","Independent valuation"],["rec","len","money","Realisations applied to the debt"],["agt","val","info","Comparables and market evidence"]
+    ];
+    var LAY={info:["Information","#7FB3E0"],auth:["Authority","#D2AE63"],money:["Money","#E8875A"]}, cur="info", sel="rec", byId={};
+    N.forEach(function(n){byId[n.id]=n;});
+    var defs=svgEl(svg,"defs",{});
+    for(var k in LAY){var mk=svgEl(defs,"marker",{id:"na_"+k,viewBox:"0 0 10 10",refX:"9",refY:"5",markerWidth:"6",markerHeight:"6",orient:"auto"});svgEl(mk,"path",{d:"M0 0 L10 5 L0 10 z",fill:LAY[k][1]});}
+    var gE=svgEl(svg,"g",{}), gN=svgEl(svg,"g",{});
+    ["info","auth","money"].forEach(function(k){var b=document.createElement("button");b.className="chip";b.type="button";b.dataset.l=k;b.textContent=LAY[k][0];b.addEventListener("click",function(){cur=k;draw();});layersEl.appendChild(b);
+      var s=document.createElement("span");s.innerHTML='<i style="display:inline-block;width:22px;border-top:2px solid '+LAY[k][1]+';vertical-align:middle;margin-right:6px"></i>'+LAY[k][0];legend.appendChild(s);});
+    function draw(){
+      Array.prototype.forEach.call(layersEl.querySelectorAll(".chip"),function(c){c.setAttribute("aria-pressed",String(c.dataset.l===cur));});
+      while(gE.firstChild)gE.removeChild(gE.firstChild);while(gN.firstChild)gN.removeChild(gN.firstChild);
+      E.forEach(function(e){
+        if(e[2]!==cur)return;
+        var a=byId[e[0]],b=byId[e[1]],dx=b.x-a.x,dy=b.y-a.y,L=Math.sqrt(dx*dx+dy*dy),ux=dx/L,uy=dy/L,off=6;
+        var x1=a.x+ux*a.r-uy*off,y1=a.y+uy*a.r+ux*off,x2=b.x-ux*(b.r+4)-uy*off,y2=b.y-uy*(b.r+4)+ux*off;
+        var on=e[0]===sel||e[1]===sel;
+        var p=svgEl(gE,"path",{d:"M"+x1+" "+y1+" L"+x2+" "+y2,stroke:LAY[cur][1],"stroke-width":on?2.6:1.2,opacity:on?1:.22,"marker-end":"url(#na_"+cur+")","stroke-dasharray":"7 5","class":on?"flowline":""});
+        if(on)p.style.animation="dash 1.1s linear infinite";
+        svgEl(p,"title",{},byId[e[0]].t+" → "+byId[e[1]].t+": "+e[3]);
+      });
+      N.forEach(function(n){
+        var g=svgEl(gN,"g",{"class":"hot",tabindex:"0",role:"button","aria-label":n.t});
+        svgEl(g,"circle",{cx:n.x,cy:n.y,r:n.r,fill:n.id===sel?"#1E3555":"#13243B",stroke:n.id===sel?"#D2AE63":"#2A4262","stroke-width":n.id===sel?2.5:1.5});
+        svgEl(g,"text",{x:n.x,y:n.y+4,"text-anchor":"middle","font-size":n.id==="rec"?14:11.5,fill:"#EEE8DC","font-family":"IBM Plex Sans, Arial, sans-serif"},n.t);
+        g.addEventListener("click",function(){sel=n.id;draw();});
+        g.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();sel=n.id;draw();}});
+      });
+      var n=byId[sel], out=[], inn=[];
+      E.forEach(function(e){if(e[2]!==cur)return;if(e[0]===sel)out.push(byId[e[1]].t+": "+e[3]);if(e[1]===sel)inn.push(byId[e[0]].t+": "+e[3]);});
+      panel.innerHTML='<span class="caps">Distributed cognition · '+LAY[cur][0]+'</span><h3>'+esc(n.t)+'</h3><p class="q">'+esc(n.d)+'</p><dl><dt>Flows out</dt><dd>'+(out.length?out.map(esc).join("<br>"):"None on this layer")+'</dd><dt>Flows in</dt><dd>'+(inn.length?inn.map(esc).join("<br>"):"None on this layer")+'</dd><dt>Design question</dt><dd>'+(out.length+inn.length===0?"Should this party be on this layer at all?":"How fast does each flow move, and who notices if it stops?")+'</dd></dl>';
+    }
+    draw();
+  })();
+
+  /* ---------- generic polygon chart ---------- */
+  function polyChart(svg,labels,vals,max,cx,cy,R,color){
+    while(svg.firstChild)svg.removeChild(svg.firstChild);
+    var n=labels.length;function pt(i,v){var a=-Math.PI/2+i*2*Math.PI/n;return [cx+Math.cos(a)*R*v/max,cy+Math.sin(a)*R*v/max];}
+    for(var lv=1;lv<=max;lv++){var p=[];for(var i=0;i<n;i++)p.push(pt(i,lv).join(","));svgEl(svg,"polygon",{points:p.join(" "),fill:"none",stroke:"#2A4262"});}
+    for(var j=0;j<n;j++){var e=pt(j,max);svgEl(svg,"line",{x1:cx,y1:cy,x2:e[0],y2:e[1],stroke:"#2A4262"});var l=pt(j,max*1.22);svgEl(svg,"text",{x:l[0],y:l[1]+4,"text-anchor":"middle","font-size":11,fill:"#C3CFDD","font-family":"IBM Plex Sans, Arial, sans-serif"},labels[j]);}
+    svgEl(svg,"polygon",{points:vals.map(function(v,i){return pt(i,Math.max(v,0.05)).join(",");}).join(" "),fill:"rgba(232,135,90,.2)",stroke:color,"stroke-width":2});
+  }
+  var NDMLAB=["Ill-structured","Dynamic","Goals","Feedback loops","Time stress","Stakes","Players","Norms"];
+  window.__ndmRadar=function(v){polyChart($("ndmRadar"),NDMLAB,v,3,150,155,110,"#E8875A");};
+  window.__ndmRadar([0,0,0,0,0,0,0,0]);
+
+  /* ---------- Validity map (Kahneman & Klein) ---------- */
+  (function(){
+    var svg=$("valid"), panel=$("validPanel");
+    var X0=70,X1=530,Y0=380,Y1=30;
+    var J=[
+      {t:"Is the property occupied?",v:.88,f:.9,d:"Thousands of repetitions, cues you can see and hear, feedback the same day.",m:"Trust the read, act to secure, then verify. Record the cue that triggered it."},
+      {t:"Will the site be re-entered or stripped?",v:.68,f:.78,d:"Strong cues (recent damage, vans, a borrower in dispute) and fast feedback.",m:"Act early: security is reversible, loss is not."},
+      {t:"Is this tenancy genuine?",v:.74,f:.55,d:"Valid once the documents are seen; feedback in days to weeks.",m:"Hold as a working hypothesis; look for the one document that would disprove it."},
+      {t:"Is the borrower’s plan a plan or a story?",v:.52,f:.42,d:"Mixed cues: confident stories are coherent whether or not they are true.",m:"Dated milestones; let evidence, not fluency, decide."},
+      {t:"Will the contractor return?",v:.45,f:.5,d:"Depends on money owed and other work; cues are partial.",m:"Price both outcomes; do not wait on one."},
+      {t:"Exit price of an unusual asset",v:.3,f:.12,d:"Rare, slow, noisy feedback. Kahneman’s danger zone: confidence without calibration.",m:"Independent valuation, test marketing, competition; record your forecast and check it at completion."},
+      {t:"Outcome of a novel legal point",v:.2,f:.15,d:"Few precedents, slow resolution.",m:"Take advice; never let instinct stand in for it."},
+      {t:"Behaviour of a new lender type",v:.25,f:.3,d:"No pattern library yet.",m:"Ask; write the mission down; agree triggers for changing route."}
+    ];
+    function X(f){return X0+(X1-X0)*f;} function Y(v){return Y0-(Y0-Y1)*v;}
+    var sel=0, drag=-1, dots=[];
+    function quad(x,y,w,h,fill,label,tx,ty){svgEl(svg,"rect",{x:x,y:y,width:w,height:h,fill:fill});svgEl(svg,"text",{x:tx,y:ty,"font-size":12,fill:"#8EA0B6","font-family":"IBM Plex Mono, monospace","letter-spacing":".06em"},label);}
+    var xm=X(.5),ym=Y(.5);
+    quad(X0,Y1,xm-X0,ym-Y1,"rgba(238,232,220,.04)","CALIBRATE",X0+8,Y1+18);
+    quad(xm,Y1,X1-xm,ym-Y1,"rgba(127,179,224,.10)","TRUST, THEN VERIFY",xm+8,Y1+18);
+    quad(X0,ym,xm-X0,Y0-ym,"rgba(232,135,90,.10)","DO NOT TRUST THE GUT",X0+8,Y0-10);
+    quad(xm,ym,X1-xm,Y0-ym,"rgba(238,232,220,.04)","LEARN FAST, WATCH NOISE",xm+8,Y0-10);
+    svgEl(svg,"line",{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:"#8EA0B6"});svgEl(svg,"line",{x1:X0,y1:Y0,x2:X0,y2:Y1,stroke:"#8EA0B6"});
+    svgEl(svg,"text",{x:(X0+X1)/2,y:420,"text-anchor":"middle","font-size":13,fill:"#8EA0B6","font-family":"IBM Plex Sans, Arial"},"Speed and clarity of feedback →");
+    var yl=svgEl(svg,"text",{x:24,y:(Y0+Y1)/2,"text-anchor":"middle","font-size":13,fill:"#8EA0B6","font-family":"IBM Plex Sans, Arial",transform:"rotate(-90 24 "+((Y0+Y1)/2)+")"},"Validity of cues →");
+    var g=svgEl(svg,"g",{});
+    function draw(){
+      while(g.firstChild)g.removeChild(g.firstChild);dots=[];
+      J.forEach(function(j,i){
+        var h=svgEl(g,"g",{"class":"hot",tabindex:"0",role:"button","aria-label":j.t});
+        svgEl(h,"circle",{cx:X(j.f),cy:Y(j.v),r:i===sel?11:8,fill:i===sel?"#D2AE63":"#1E3555",stroke:"#D2AE63","stroke-width":2,style:"cursor:grab"});
+        svgEl(h,"text",{x:X(j.f)+(j.f>.7?-14:14),y:Y(j.v)+4,"text-anchor":j.f>.7?"end":"start","font-size":11.5,fill:i===sel?"#EEE8DC":"#C3CFDD","font-family":"IBM Plex Sans, Arial"},j.t);
+        h.addEventListener("pointerdown",function(e){e.preventDefault();drag=i;sel=i;show();svg.setPointerCapture&&svg.setPointerCapture(e.pointerId);});
+        h.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();sel=i;draw();show();}});
+      });
+    }
+    function zone(j){return j.v>=.5?(j.f>=.5?"Trust, then verify":"Calibrate"):(j.f>=.5?"Learn fast, watch noise":"Do not trust the gut");}
+    function show(){var j=J[sel];panel.innerHTML='<span class="caps">Kahneman &amp; Klein · '+esc(zone(j))+'</span><h3>'+esc(j.t)+'</h3><p class="q">Cue validity '+Math.round(j.v*100)+' · feedback '+Math.round(j.f*100)+'</p><dl><dt>Why it sits here</dt><dd>'+esc(j.d)+'</dd><dt>Discipline</dt><dd>'+esc(j.m)+'</dd><dt>Rule</dt><dd>Intuition is trustworthy only where cues are valid and feedback has had time to train it.</dd></dl>';}
+    svg.addEventListener("pointermove",function(e){if(drag<0)return;var p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;var q=p.matrixTransform(svg.getScreenCTM().inverse());J[drag].f=Math.max(0,Math.min(1,(q.x-X0)/(X1-X0)));J[drag].v=Math.max(0,Math.min(1,(Y0-q.y)/(Y0-Y1)));draw();show();});
+    ["pointerup","pointerleave","pointercancel"].forEach(function(ev){svg.addEventListener(ev,function(){if(drag>=0){drag=-1;draw();}});});
+    draw();show();
+  })();
+
+  /* ---------- Arc of an appointment ---------- */
+  (function(){
+    var svg=$("arc"), X0=70,X1=860,Y0=250,Y1=30, sel=0;
+    var fid=[.35,.55,.82,.66,.78,.8,.9], irr=[.05,.1,.15,.3,.45,.9,1], ent=[.35,.3,.24,.18,.13,.1,.08];
+    var names=["Instruction","Threshold","Remap","Contact","Tempo","Exit","Release"];
+    function X(i){return X0+(X1-X0)*i/6;} function Y(v){return Y0-(Y0-Y1)*v;}
+    function path(a){return a.map(function(v,i){return (i?"L":"M")+X(i)+" "+Y(v);}).join(" ");}
+    function draw(){
+      while(svg.firstChild)svg.removeChild(svg.firstChild);
+      for(var i=0;i<7;i++){svgEl(svg,"line",{x1:X(i),y1:Y1-6,x2:X(i),y2:Y0,stroke:i===sel?"#D2AE63":"#2A4262","stroke-dasharray":i===sel?"":"2 4"});
+        svgEl(svg,"text",{x:X(i),y:Y0+26,"text-anchor":"middle","font-size":13,fill:i===sel?"#EEE8DC":"#8EA0B6","font-family":"IBM Plex Sans, Arial"},(i+1)+" · "+names[i]);}
+      svgEl(svg,"line",{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:"#8EA0B6"});
+      svgEl(svg,"path",{d:path(ent),fill:"none",stroke:"#7FB3E0","stroke-width":2,"stroke-dasharray":"6 5"});
+      svgEl(svg,"path",{d:path(irr),fill:"none",stroke:"#E8875A","stroke-width":2.5});
+      svgEl(svg,"path",{d:path(fid),fill:"none",stroke:"#D2AE63","stroke-width":3});
+      svgEl(svg,"text",{x:X(2)+8,y:Y(fid[2])-12,"font-size":12,fill:"#D2AE63","font-family":"IBM Plex Sans, Arial"},"remap lifts fidelity");
+      svgEl(svg,"text",{x:X(3)+8,y:Y(fid[3])+18,"font-size":12,fill:"#D2AE63","font-family":"IBM Plex Sans, Arial"},"contact disturbs it");
+      svgEl(svg,"text",{x:X(5)-8,y:Y(irr[5])-10,"text-anchor":"end","font-size":12,fill:"#E8875A","font-family":"IBM Plex Sans, Arial"},"commitment spikes at exit");
+      for(var k=0;k<7;k++)(function(k){
+        var h=svgEl(svg,"g",{"class":"hot",tabindex:"0",role:"button","aria-label":"Moment "+(k+1)+" "+names[k]});
+        svgEl(h,"rect",{x:X(k)-40,y:Y1-6,width:80,height:Y0-Y1+40,fill:"transparent"});
+        svgEl(h,"circle",{cx:X(k),cy:Y(fid[k]),r:k===sel?9:6,fill:k===sel?"#D2AE63":"#0C1726",stroke:"#D2AE63","stroke-width":2});
+        svgEl(h,"circle",{cx:X(k),cy:Y(irr[k]),r:k===sel?7:5,fill:k===sel?"#E8875A":"#0C1726",stroke:"#E8875A","stroke-width":2});
+        svgEl(h,"title",{},names[k]+": picture fidelity "+Math.round(fid[k]*100)+", irreversibility "+Math.round(irr[k]*100));
+        h.addEventListener("click",function(){window.__selMom(k);});
+        h.addEventListener("keydown",function(e){if(e.key==="Enter"){window.__selMom(k);}});
+      })(k);
+    }
+    window.__arcSel=function(i){sel=i;draw();};
+    draw();
+  })();
+
+  /* ---------- Planes of conflict rings ---------- */
+  (function(){
+    var svg=$("planes"), panel=$("planesPanel"), cx=260, cy=220;
+    var P=[
+      {k:"moral",t:"Moral",r:200,c:"#D2AE63",d:"Trust, legitimacy, integrity. Boyd ranked it the most powerful plane: lose it and the other two slow down.",moves:[["Candid first letters","State who you are, whom you act for and what you will and will not do."],["Respect occupiers’ rights","Every fair dealing buys tempo with courts, agents and neighbours."],["Report bad news early","The lender’s trust is the receiver’s freedom of action."]]},
+      {k:"mental",t:"Mental",r:135,c:"#7FB3E0",d:"The contest of pictures: whose account of the situation prevails with lender, occupiers, buyers and court.",moves:[["Fortnightly picture","Rewrite, don’t append, the one-page picture of the case."],["Test the story","Hold the borrower’s narrative against the map, with dated evidence."],["Stay unpredictable in route","Never unclear in authority or intention."]]},
+      {k:"physical",t:"Physical",r:72,c:"#E8875A",d:"Possession, keys, security, insurance, income and works: the plane the textbooks describe, where friction is felt most directly.",moves:[["Secure and insure","Reversible, cheap, and first."],["Control the nodes","Gates, doors, meters, records."],["Sequence for options","Each physical move should open routes until the case is ready to decide."]]}
+    ];
+    var sel=0, mv=-1;
+    function draw(){
+      while(svg.firstChild)svg.removeChild(svg.firstChild);
+      P.forEach(function(p,i){
+        var g=svgEl(svg,"g",{"class":"hot",tabindex:"0",role:"button","aria-label":p.t+" plane"});
+        svgEl(g,"circle",{cx:cx,cy:cy,r:p.r,fill:i===sel?"rgba(210,174,99,.10)":"rgba(18,34,56,.6)",stroke:p.c,"stroke-width":i===sel?3:1.5});
+        svgEl(g,"text",{x:cx,y:cy-p.r+24,"text-anchor":"middle","font-size":20,fill:i===sel?"#EEE8DC":p.c,"font-family":"Cormorant Garamond, Georgia, serif","font-weight":600},p.t);
+        g.addEventListener("click",function(e){if(e.target.closest&&e.target.closest(".mv"))return;sel=i;mv=-1;draw();show();});
+        g.addEventListener("keydown",function(e){if(e.key==="Enter"){sel=i;mv=-1;draw();show();}});
+      });
+      var p=P[sel], inner=sel<2?P[sel+1].r:0;
+      p.moves.forEach(function(m,j){
+        var a=(150-j*60)*Math.PI/180, rr=(p.r+inner)/2+4, x=cx+Math.cos(a)*rr, y=cy+Math.sin(a)*rr;
+        if(sel===2){x=cx+(j-1)*40;y=cy+14;}
+        var g=svgEl(svg,"g",{"class":"hot mv",tabindex:"0",role:"button","aria-label":m[0]});
+        svgEl(g,"circle",{cx:x,cy:y,r:j===mv?11:8,fill:j===mv?"#EEE8DC":p.c,stroke:"#0C1726","stroke-width":2});
+        svgEl(g,"title",{},m[0]);
+        g.addEventListener("click",function(){mv=j;draw();show();});
+        g.addEventListener("keydown",function(e){if(e.key==="Enter"){mv=j;draw();show();}});
+      });
+    }
+    function show(){var p=P[sel];panel.innerHTML='<span class="caps">Patterns of Conflict · plane</span><h3>'+p.t+'</h3><p class="q">'+esc(p.d)+'</p><dl>'+p.moves.map(function(m,j){return '<dt>'+(j===mv?"▸ ":"")+esc(m[0])+'</dt><dd>'+esc(m[1])+'</dd>';}).join("")+'</dl><p class="hint">The dots on the ring are moves: select one.</p>';}
+    draw();show();
+  })();
+
+  /* ---------- Snowmobile builder ---------- */
+  (function(){
+    var parts=[["control","Keep control of the asset","old"],["speed","Move fast","old"],["exclude","Keep the borrower out","old"],["info","The borrower’s knowledge","old"],["game","Game theory: change the payoffs","new"],["afford","Gibson: what each party affords","new"],["mission","Mission command: written limits","new"],["pre","Pre-mortem","new"],["valid","Kahneman & Klein: validity zones","new"],["lynch","Lynch: make the asset legible","new"]];
+    var box=$("snowParts"), out=$("snowOut"), on={};
+    var PHR={control:"keep control of the asset",speed:"move at the tempo the situation sets",exclude:"limit the borrower’s room to obstruct",info:"treat the borrower’s knowledge as an asset",game:"make cooperation the borrower’s best option",afford:"read what the asset offers every party",mission:"act within limits the lender has written down",pre:"imagine the failure before choosing the route",valid:"trust instinct only where feedback has trained it",lynch:"make the security legible to team and buyers"};
+    parts.forEach(function(p){var b=document.createElement("button");b.className="chip";b.type="button";b.setAttribute("aria-pressed","false");b.innerHTML=(p[2]==="old"?"◦ ":"＋ ")+esc(p[1]);b.title=p[2]==="old"?"From the old concept":"From another domain";
+      b.addEventListener("click",function(){on[p[0]]=!on[p[0]];b.setAttribute("aria-pressed",String(!!on[p[0]]));render();});box.appendChild(b);});
+    function render(){
+      var ks=parts.filter(function(p){return on[p[0]];}), olds=ks.filter(function(p){return p[2]==="old";}).length, news=ks.length-olds;
+      if(ks.length<3){out.innerHTML='<span class="caps">Pieces selected: '+ks.length+'</span><p style="margin-top:8px">Choose at least three. ◦ marks a piece from the old concept, ＋ a piece from another domain.</p>';return;}
+      var s=ks.map(function(p){return PHR[p[0]];});var last=s.pop();
+      var verdict=news===0?"All the pieces come from the old concept: this is the old concept rearranged, not a new one. Boyd’s snowmobile needs parts from elsewhere.":(olds===0?"All the pieces are imported: a fresh concept, but check it still respects what the old one got right.":"A genuine snowmobile: old parts freed from their old meanings, joined to parts from other domains.");
+      if(on.exclude&&on.info)verdict+=" Note the tension between excluding the borrower and using his knowledge: the new concept has to resolve it, usually by keeping control while pricing cooperation.";
+      out.innerHTML='<span class="caps">Your snowmobile</span><p style="margin-top:8px"><b>The receiver should '+s.join(", ")+(s.length?", and ":"")+last+'.</b></p><p style="margin-top:8px">'+esc(verdict)+'</p>';
+    }
+    render();
+  })();
+
+  /* ---------- Card decks ---------- */
+  var DECKS={
+    legal:[
+      ["LPA 1925 · s.101","The power to appoint","A mortgagee’s statutory power to appoint a receiver of income once the power of sale has arisen.","Most charges extend it by contract, which is why “fixed charge receiver” is the working term. <b>Move:</b> read the charge first; the deed defines the weapon."],
+      ["LPA 1925 · s.109","The receiver as the mortgagor’s agent","The receiver is deemed the agent of the mortgagor, who is solely responsible for the receiver’s acts unless the mortgage says otherwise.","It protects the lender and places the receiver in a peculiar moral position: chosen by one party, acting as agent of the other. <b>Move:</b> say so plainly in first letters."],
+      ["Medforth v Blake [2000] Ch 86","Good faith, and diligence if managing","The receiver owes duties in equity: good faith throughout, and due diligence when choosing to manage the property.","The receiver need not run a business, but if he does, he must run it properly. <b>Move:</b> decide consciously whether you are managing or merely holding."],
+      ["Silven Properties v RBS [2003] EWCA Civ 1409","Timing is free; care on price is not","The receiver may choose when to sell and need not improve before selling, but must take reasonable care to obtain the true market value at the moment of sale.","Exit price is a low-validity judgment. <b>Move:</b> evidence the market reading: valuation, marketing, competition."],
+      ["Downsview Nominees v First City [1993]","The primary duty","The receiver’s powers are given to bring about repayment of the secured debt; other duties sit beneath that purpose.","This is the Schwerpunkt the law sets. <b>Move:</b> test every proposed action against it."],
+      ["Purewal v Countrywide [2015] EWCA Civ 1122","Who is owed the duty","The Medforth duty runs to a mortgagor who retains an interest in the equity of redemption.","The shape of the duty depends on who is still in the field. <b>Move:</b> map who holds what interest before assuming whom you owe."],
+      ["BLCP Eden 1 v Rooksmead [2026] EWHC 1268 (Ch)","Validity, strictly","The court took a strict line on the validity of a receivers’ appointment.","The first thing a receiver perceives is the paper. <b>Move:</b> validity is checked before entry, not after challenge."]
+    ],
+    boyd:[
+      ["Destruction and Creation, 1976","Why concepts decay","Any concept sealed off from fresh contact with reality drifts into mismatch.","<b>In the field:</b> the case concept formed from the file starts to decay on the first site visit."],
+      ["Gödel, as Boyd used him","No system proves itself","A logical system cannot fully establish its own consistency from inside.","<b>In the field:</b> a case plan cannot validate itself. Only the site, the parties and the market can."],
+      ["Heisenberg, as Boyd used him","Observing disturbs","Precision of observation is limited, and observing changes what is observed.","<b>In the field:</b> the moment you serve notices, every party changes behaviour. Your observation is now part of the situation."],
+      ["The Second Law, as Boyd used it","Closed systems run down","Entropy rises in a closed system; order needs exchange with the outside.","<b>In the field:</b> a team that stops remapping drifts into confusion even if nothing outside changes."],
+      ["The snowmobile","Creative induction","Skis, an outboard motor, tank treads and handlebars, freed from their old uses and recombined.","<b>In the field:</b> new routes are built from parts of old ones plus parts from other domains (see the builder in section 11)."],
+      ["The OODA misreading","It is not a circle","The four-box loop omits the feedback, feed-forward and implicit guidance that carry the theory.","<b>In the field:</b> “be faster” is useless advice. “Orient better, and let orientation drive action” is not."],
+      ["Organic Design for Command and Control","Implicit over explicit","Fast cooperation rests on shared orientation and trust, not on more detailed orders.","<b>In the field:</b> the best instruction letters are short on method and long on purpose and limits."],
+      ["The Strategic Game of ? and ?","Interaction and isolation","Systems thrive by interacting with their environment and fail when cut off from it.","<b>In the field:</b> default is isolation. Recovery is reconnection."],
+      ["The Conceptual Spiral","Learning never closes","Boyd’s late briefing on how science, engineering and technology keep breaking and remaking their concepts.","<b>In the field:</b> a practice must keep a deliberate spiral of review, or its expertise ossifies."]
+    ],
+    lived:[
+      ["Merleau-Ponty","The intentional arc","The web of skills and past experience that projects us into a situation already prepared to see what it offers.","<b>In the field:</b> two receivers at the same gate see different sites, because they arrive with different arcs."],
+      ["Dreyfus","Absorbed coping","Expert action is fluid and responsive; the situation solicits the move without deliberation.","<b>In the field:</b> noticing the fresh mattress without trying to. Then stepping out of absorption to ask what it means."],
+      ["Montero, Foultier","Reflection inside action","Experts do attend to what they are doing, through a bodily kind of awareness.","<b>In the field:</b> the senior receiver both flows and checks. Teach both."],
+      ["Gibson","Affordances","We perceive possibilities for action, relative to who is perceiving.","<b>In the field:</b> the yard is parking, access, a ransom strip, a lot. Use the “Read as” lens on the Lynch map."],
+      ["Bourdieu","Habitus","Durable dispositions, acquired socially, that generate regulated improvisation.","<b>In the field:</b> the practice’s feel for the game is an asset and a blind spot."],
+      ["Bourdieu","Illusio","Being caught up in the game and taking it seriously.","<b>In the field:</b> without illusio no one cares enough; with too much, the game eclipses the asset and the people in it."],
+      ["Clausewitz","Friction","Countless small difficulties that make the simple hard.","<b>In the field:</b> the wrong padlock, the missing meter key, the agent off sick. Plan for the small failures."],
+      ["Clausewitz","Coup d’œil","The trained glance that takes in what matters.","<b>In the field:</b> Fingerspitzengefühl under another name. Built by many sites seen with feedback."],
+      ["J. Glenn Gray","The moral weight of action","A philosopher’s honest account, from his own journals, of what action in danger does to those who take it.","<b>In the field:</b> receivers handle homes, livelihoods and savings. Describe what the work does to us, too."]
+    ],
+    decide:[
+      ["Klein · RPD","Recognise","The expert sees the situation as a kind, bringing goals, cues, expectations and a typical action.","<b>In the field:</b> “this is a stall, not a failure” is a recognition, and it carries a plan with it."],
+      ["Klein · RPD","Simulate","The typical action is run forward in imagination before commitment.","<b>In the field:</b> walk the route in your head: who reacts, where it snags, what it costs."],
+      ["Klein · RPD","Adapt or reject","If the simulation snags, adjust; only if it fails, look for another option.","<b>In the field:</b> the first workable option is usually good enough. Comparing ten wastes tempo."],
+      ["Endsley · level 1","Perception","Noticing the elements in the environment.","<b>Failure:</b> attention. You did not look at the yard at night."],
+      ["Endsley · level 2","Comprehension","Understanding what the elements mean for your goals.","<b>Failure:</b> the mental model. You saw the vans and read them as visitors."],
+      ["Endsley · level 3","Projection","Anticipating where the situation is going.","<b>Failure:</b> imagination. You did not see that the vans meant a claim to the yard by spring."],
+      ["Weick · resilience 1","Improvisation","Bricolage with what is to hand when the plan fails.","<b>In the field:</b> Dodge’s escape fire. Keep a receiver’s toolkit of quick, lawful improvisations."],
+      ["Weick · resilience 2","Virtual role systems","Each member holds the whole team’s roles in mind.","<b>In the field:</b> if the receiver is unreachable, the managing agent knows what the receiver would do."],
+      ["Weick · resilience 3","The attitude of wisdom","Holding knowledge and doubt together.","<b>In the field:</b> confident enough to act, humble enough to remap."],
+      ["Weick · resilience 4","Respectful interaction","Honest talk under stress keeps sensemaking alive.","<b>In the field:</b> the junior who says “the vacant building has a kettle on” must feel able to say it."],
+      ["Schön","Reflection-in-action","Surprise triggers reframing and on-the-spot experiment while the work continues.","<b>In the field:</b> keep a surprise log; each entry is a prompt to redraw the picture."]
+    ],
+    conflict:[
+      ["Sun Tzu by way of Boyd","Cheng","The orthodox move that fixes attention.","<b>In the field:</b> notices, rent demands, the regular report, done well and on time."],
+      ["Sun Tzu by way of Boyd","Ch’i","The unorthodox move that decides the matter.","<b>In the field:</b> the lawful move nobody expected: the anchor tenant on day one, a quiet buyer sounding."],
+      ["Patterns of Conflict","Variety, rapidity, harmony, initiative","Boyd’s four qualities for shaping and adapting to a changing environment.","<b>In the field:</b> many routes, quick switches, a team in step, and permission to act."],
+      ["Patterns of Conflict","Getting inside the loop","Acting so that the other side’s picture is always out of date.","<b>For a receiver:</b> not against the borrower, but ahead of the situation, so it never surprises you."],
+      ["The Strategic Game","Isolation as diagnosis","Assets in default are usually cut off from income, care, buyers and owner.","<b>In the field:</b> list every broken connection; the recovery plan is the list of reconnections."],
+      ["Organic Design","Einheit before speed","Trust is the medium through which fast action travels.","<b>In the field:</b> a fortnight spent building trust with the lender’s team repays itself many times."]
+    ],
+    practice:[
+      ["Marine Corps","Tactical decision games","Short scenarios, a time limit, a decision and a reason.","<b>In the practice:</b> a monthly ten-minute receivership decision game, compared with a senior answer."],
+      ["Klein","Pre-mortem","Assume the plan has failed; explain why.","<b>In the practice:</b> the cheapest way to break a strip-map before it costs anything."],
+      ["Klein","Critical decision method","Structured interviews that surface what an expert noticed and when.","<b>In the practice:</b> after each hard case, an hour that turns tacit feel into teachable pattern."],
+      ["Kahneman & Klein","Calibration","Intuition improves only where feedback is clear and timely.","<b>In the practice:</b> record exit-price forecasts at the start; compare at completion."],
+      ["Tolman","Widening drill","Name three endings before naming a route.","<b>In the practice:</b> a mandatory line in every first-week report."],
+      ["Hutchins","Hand-off design","The system thinks through its hand-offs.","<b>In the practice:</b> agree who tells whom what, how fast, on every appointment."],
+      ["Boyd","Destruction and creation of the practice","Concepts at the level of the firm decay too.","<b>In the practice:</b> an annual review of house rules against the year’s surprises."]
+    ]
+  };
+  Array.prototype.forEach.call(document.querySelectorAll("[data-deck]"),function(box){
+    var name=box.getAttribute("data-deck"), cards=DECKS[name]||[];
+    cards.forEach(function(c){
+      var b=document.createElement("button");b.className="rev";b.type="button";b.setAttribute("aria-pressed","false");
+      b.innerHTML='<span class="face front"><span class="who2">'+esc(c[0])+'</span><span class="t">'+esc(c[1])+'</span>'+esc(c[2])+'<span class="kicker">Turn for the receiver’s reading.</span></span><span class="face back"><span class="who2">In the field</span><span class="t">'+esc(c[1])+'</span>'+c[3]+'</span><span class="turn">TURN THE CARD ↻</span>';
+      b.addEventListener("click",function(){var on=!b.classList.contains("on");b.classList.toggle("on",on);b.setAttribute("aria-pressed",String(on));upd(name);});
+      box.appendChild(b);
+    });
+    upd(name);
+  });
+  function upd(name){var box=document.querySelector('[data-deck="'+name+'"]'),cnt=document.querySelector('[data-count="'+name+'"]'),all=box.querySelectorAll(".rev"),on=box.querySelectorAll(".rev.on");if(cnt)cnt.textContent=on.length+" of "+all.length+" turned";var bt=document.querySelector('[data-turnall="'+name+'"]');if(bt)bt.textContent=on.length===all.length?"Turn all back":"Turn all";}
+  Array.prototype.forEach.call(document.querySelectorAll("[data-turnall]"),function(bt){
+    bt.addEventListener("click",function(){var name=bt.getAttribute("data-turnall"),box=document.querySelector('[data-deck="'+name+'"]'),all=box.querySelectorAll(".rev"),allOn=box.querySelectorAll(".rev.on").length===all.length;
+      Array.prototype.forEach.call(all,function(c){c.classList.toggle("on",!allOn);c.setAttribute("aria-pressed",String(!allOn));});upd(name);});
+  });
+
+})();
+
+</script>
+</body>
+</html>
